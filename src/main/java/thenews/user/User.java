@@ -10,18 +10,18 @@ public class User {
     private String username;
     private String password;
     private String email;
-    private Long groupid;
+    private Long roleid;
 
     // Constructor
 
-    public User(Long userid, String firstname, String lastname, String username, String password, String email, Long groupid) {
+    public User(Long userid, String firstname, String lastname, String username, String password, String email, Long roleid) {
         this.userid = userid;
         this.firstname = firstname;
         this.lastname = lastname;
         this.username = username;
         this.password = password;
         this.email = email;
-        this.groupid = groupid;
+        this.roleid = roleid;
     }
 
     // Getters and Setters
@@ -74,12 +74,12 @@ public class User {
         this.email = email;
     }
 
-    public Long getGroupid() {
-        return groupid;
+    public Long getRoleid() {
+        return roleid;
     }
 
-    public void setGroupid(Long groupid) {
-        this.groupid = groupid;
+    public void setRoleid(Long roleid) {
+        this.roleid = roleid;
     }
 
     @Override
@@ -91,7 +91,7 @@ public class User {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
-                ", groupid=" + groupid +
+                ", roleid=" + roleid +
                 '}';
     }
 }

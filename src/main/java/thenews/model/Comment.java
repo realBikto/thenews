@@ -1,4 +1,4 @@
-package thenews.comment;
+package thenews.model;
 
 import java.time.LocalDate;
 

@@ -1,6 +1,8 @@
-package thenews.user;
+package thenews.service.impl;
 
 import org.springframework.stereotype.Service;
+import thenews.model.User;
+import thenews.service.UserService;
 
 import java.util.List;
 

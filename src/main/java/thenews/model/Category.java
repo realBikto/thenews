@@ -1,4 +1,4 @@
-package thenews.category;
+package thenews.model;
 
 import java.time.LocalDate;
 

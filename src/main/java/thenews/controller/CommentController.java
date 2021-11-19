@@ -1,10 +1,12 @@
-package thenews.comment;
+package thenews.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import thenews.model.Comment;
+import thenews.service.CommentService;
 
 import java.util.List;
 

@@ -1,6 +1,8 @@
-package thenews.category;
+package thenews.service.impl;
 
 import org.springframework.stereotype.Service;
+import thenews.service.CategoryService;
+import thenews.model.Category;
 
 import java.time.LocalDate;
 import java.util.List;

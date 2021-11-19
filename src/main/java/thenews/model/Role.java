@@ -1,4 +1,4 @@
-package thenews.role;
+package thenews.model;
 
 public class Role {
 

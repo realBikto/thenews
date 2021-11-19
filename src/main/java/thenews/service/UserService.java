@@ -1,4 +1,6 @@
-package thenews.user;
+package thenews.service;
+
+import thenews.model.User;
 
 import java.util.List;
 

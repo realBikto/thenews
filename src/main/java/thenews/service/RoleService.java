@@ -1,4 +1,6 @@
-package thenews.role;
+package thenews.service;
+
+import thenews.model.Role;
 
 import java.util.List;
 

@@ -1,4 +1,6 @@
-package thenews.category;
+package thenews.service;
+
+import thenews.model.Category;
 
 import java.util.List;
 

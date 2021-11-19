@@ -1,4 +1,4 @@
-package thenews.user;
+package thenews.model;
 
 public class User {
 

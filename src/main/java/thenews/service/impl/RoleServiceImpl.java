@@ -1,6 +1,8 @@
-package thenews.role;
+package thenews.service.impl;
 
 import org.springframework.stereotype.Service;
+import thenews.model.Role;
+import thenews.service.RoleService;
 
 import java.util.List;
 

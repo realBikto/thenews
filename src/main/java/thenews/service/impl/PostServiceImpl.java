@@ -1,6 +1,8 @@
-package thenews.post;
+package thenews.service.impl;
 
 import org.springframework.stereotype.Service;
+import thenews.model.Post;
+import thenews.service.PostService;
 
 import java.time.LocalDate;
 import java.util.List;

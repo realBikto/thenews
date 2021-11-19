@@ -1,4 +1,6 @@
-package thenews.comment;
+package thenews.service;
+
+import thenews.model.Comment;
 
 import java.util.List;
 

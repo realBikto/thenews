@@ -1,7 +1,9 @@
-package thenews.comment;
+package thenews.service.impl;
 
 
 import org.springframework.stereotype.Service;
+import thenews.service.CommentService;
+import thenews.model.Comment;
 
 import java.time.LocalDate;
 import java.util.List;

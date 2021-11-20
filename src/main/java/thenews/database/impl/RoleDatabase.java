@@ -30,7 +30,7 @@ public class RoleDatabase implements RoleDB {
     @Override
     public boolean update(Role object) {
         if (object.getRoleid() > 0){
-            String sql = String.format("update role set name = '%s' where roleid = '%d'", object.getName(), object.getRoleid());
+            String sql = String.format("update role set name = '%s' where roleid = %d", object.getName(), object.getRoleid());
             jdbcTemplate.execute(sql);
             return true;
         }

@@ -1,11 +1,11 @@
 package thenews.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import thenews.database.impl.PostDatabase;
+import thenews.model.BaseDBModel;
 import thenews.model.Post;
-import thenews.service.PostService;
 
 import java.util.List;
 
@@ -13,16 +13,26 @@ import java.util.List;
 @RequestMapping(path="api/v1/post")
 public class PostController {
 
-    private final PostService postService;
-
     @Autowired
-    public PostController(PostService postService) {
-        this.postService = postService;
-    }
-
+    private PostDatabase postDatabase;
 
     @GetMapping
-    public List<Post> getPosts(){
-        return postService.getAllPosts();
+    public ResponseEntity<List<Post>> findAll(){
+        return ResponseEntity.ok(postDatabase.findAll());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Post> findById(@PathVariable int id){
+        return ResponseEntity.ok(postDatabase.findById(id));
+    }
+
+    @PostMapping
+    public ResponseEntity<BaseDBModel> save(@RequestBody Post post){
+        return ResponseEntity.ok(new BaseDBModel(postDatabase.save(post)));
+    }
+
+    @PutMapping
+    public ResponseEntity<BaseDBModel> update(@RequestBody Post post){
+        return ResponseEntity.ok(new BaseDBModel(postDatabase.update(post)));
     }
 }

@@ -1,36 +1,26 @@
 package thenews.model;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Post {
 
     // Attributes
-    private Long id;
+    private Integer postid;
     private String title;
     private String content;
-    private Long userid;
+    private Integer userid;
     private String image;
-    private Long categoryid;
-    private LocalDate createdat;
+    private Integer categoryid;
+    private Date createdat;
     private String type = "POST";
 
-    public Post(Long id, String title, String content, Long userid, String image, Long categoryid, LocalDate createdat) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.userid = userid;
-        this.image = image;
-        this.categoryid = categoryid;
-        this.createdat = createdat;
-    }
-
     // Getters and Setters
-    public Long getId() {
-        return id;
+    public Integer getPostid() {
+        return postid;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setPostid(Integer postid) {
+        this.postid = postid;
     }
 
     public String getTitle() {
@@ -49,11 +39,11 @@ public class Post {
         this.content = content;
     }
 
-    public Long getUserid() {
+    public Integer getUserid() {
         return userid;
     }
 
-    public void setUserid(Long userid) {
+    public void setUserid(Integer userid) {
         this.userid = userid;
     }
 
@@ -65,33 +55,27 @@ public class Post {
         this.image = image;
     }
 
-    public Long getCategoryid() {
+    public Integer getCategoryid() {
         return categoryid;
     }
 
-    public void setCategoryid(Long categoryid) {
+    public void setCategoryid(Integer categoryid) {
         this.categoryid = categoryid;
     }
 
-    public LocalDate getCreatedat() {
+    public Date getCreatedat() {
         return createdat;
     }
 
-    public void setCreatedat(LocalDate createdat) {
+    public void setCreatedat(Date createdat) {
         this.createdat = createdat;
     }
 
-    @Override
-    public String toString() {
-        return "Post{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", userid=" + userid +
-                ", image='" + image + '\'' +
-                ", categoryid=" + categoryid +
-                ", createdat=" + createdat +
-                ", type='" + type + '\'' +
-                '}';
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

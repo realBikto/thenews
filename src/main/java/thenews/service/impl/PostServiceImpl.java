@@ -1,26 +1,19 @@
 package thenews.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import thenews.database.impl.PostDatabase;
 import thenews.model.Post;
 import thenews.service.PostService;
 
-import java.time.LocalDate;
-import java.util.List;
-
 @Service
 public class PostServiceImpl implements PostService {
+
+    @Autowired
+    private PostDatabase postDatabase;
+
     @Override
-    public List<Post> getAllPosts() {
-        return List.of(
-                new Post(
-                        1L,
-                        "PostTitle example 1",
-                        "PostContent example 1",
-                        2L,
-                        "image.url.com",
-                        23L,
-                        LocalDate.now()
-                )
-        );
+    public boolean saveNewPost(Post post) {
+        return postDatabase.save(post);
     }
 }

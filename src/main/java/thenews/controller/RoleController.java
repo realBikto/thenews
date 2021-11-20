@@ -2,10 +2,9 @@ package thenews.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import thenews.database.impl.RoleDatabase;
+import thenews.model.BaseDBModel;
 import thenews.model.Role;
 
 import java.util.List;
@@ -20,5 +19,20 @@ public class RoleController {
     @GetMapping
     public ResponseEntity<List<Role>> findAll() {
         return ResponseEntity.ok(roleDatabase.findAll());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Role> findById(@PathVariable int id){
+        return ResponseEntity.ok(roleDatabase.findById(id));
+    }
+
+    @PostMapping
+    public ResponseEntity<BaseDBModel> save(@RequestBody Role role){
+        return ResponseEntity.ok(new BaseDBModel(roleDatabase.save(role)));
+    }
+
+    @PutMapping
+    public ResponseEntity<BaseDBModel> update(@RequestBody Role role){
+        return ResponseEntity.ok(new BaseDBModel(roleDatabase.update(role)));
     }
 }

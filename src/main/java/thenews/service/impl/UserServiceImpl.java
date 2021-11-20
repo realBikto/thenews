@@ -13,13 +13,13 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllUsers() {
         return List.of(
                 new User(
-                        1L,
+                        1,
                         "Victor",
                         "Herrera",
                         "email@test.com",
                         "password",
                         "email@test.com",
-                        2L
+                        2
                 )
         );
     }

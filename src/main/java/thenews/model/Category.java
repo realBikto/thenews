@@ -4,21 +4,21 @@ import java.time.LocalDate;
 
 public class Category {
 
-    private Long categoryid;
+    private Integer categoryid;
     private String name;
     private LocalDate createdat;
 
-    public Category(Long categoryid, String name, LocalDate createdat) {
+    public Category(Integer categoryid, String name, LocalDate createdat) {
         this.categoryid = categoryid;
         this.name = name;
         this.createdat = createdat;
     }
 
-    public Long getCategoryid() {
+    public Integer getCategoryid() {
         return categoryid;
     }
 
-    public void setCategoryid(Long categoryid) {
+    public void setCategoryid(Integer categoryid) {
         this.categoryid = categoryid;
     }
 

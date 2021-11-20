@@ -14,7 +14,7 @@ public class CategoryServiceImpl implements CategoryService {
     public List<Category> getAllCategories() {
         return List.of(
                 new Category(
-                        1L,
+                        1,
                         "CategoryOne",
                         LocalDate.now()
                 )

@@ -4,17 +4,17 @@ public class User {
 
     //Attributes
 
-    private Long userid;
+    private Integer userid;
     private String firstname;
     private String lastname;
     private String username;
     private String password;
     private String email;
-    private Long roleid;
+    private Integer roleid;
 
     // Constructor
 
-    public User(Long userid, String firstname, String lastname, String username, String password, String email, Long roleid) {
+    public User(Integer userid, String firstname, String lastname, String username, String password, String email, Integer roleid) {
         this.userid = userid;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -26,11 +26,11 @@ public class User {
 
     // Getters and Setters
 
-    public Long getUserid() {
+    public Integer getUserid() {
         return userid;
     }
 
-    public void setUserid(Long userid) {
+    public void setUserid(Integer userid) {
         this.userid = userid;
     }
 
@@ -74,11 +74,11 @@ public class User {
         this.email = email;
     }
 
-    public Long getRoleid() {
+    public Integer getRoleid() {
         return roleid;
     }
 
-    public void setRoleid(Long roleid) {
+    public void setRoleid(Integer roleid) {
         this.roleid = roleid;
     }
 

@@ -2,19 +2,14 @@ package thenews.model;
 
 public class Role {
 
-    private Long roleid;
+    private Integer roleid;
     private String name;
 
-    public Role(Long roleid, String name) {
-        this.roleid = roleid;
-        this.name = name;
-    }
-
-    public Long getRoleid() {
+    public Integer getRoleid() {
         return roleid;
     }
 
-    public void setRoleid(Long roleid) {
+    public void setRoleid(Integer roleid) {
         this.roleid = roleid;
     }
 
@@ -26,11 +21,4 @@ public class Role {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Role{" +
-                "roleid=" + roleid +
-                ", name='" + name + '\'' +
-                '}';
-    }
 }

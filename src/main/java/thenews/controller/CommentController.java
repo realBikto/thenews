@@ -2,11 +2,11 @@ package thenews.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import thenews.database.impl.CommentDatabase;
+import thenews.model.BaseDBModel;
 import thenews.model.Comment;
-import thenews.service.CommentService;
 
 import java.util.List;
 
@@ -14,15 +14,26 @@ import java.util.List;
 @RequestMapping(path = "api/v1/comment")
 public class CommentController {
 
-    private CommentService commentService;
-
     @Autowired
-    public CommentController(CommentService commentService) {
-        this.commentService = commentService;
-    }
+    private CommentDatabase commentDatabase;
 
     @GetMapping
-    public List<Comment> getComments() {
-        return commentService.getAllComments();
+    public ResponseEntity<List<Comment>> findAll() {
+        return ResponseEntity.ok(commentDatabase.findAll());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Comment> findById(@PathVariable int id) {
+        return ResponseEntity.ok(commentDatabase.findById(id));
+    }
+
+    @PostMapping
+    public ResponseEntity<BaseDBModel> save(@RequestBody Comment comment){
+        return ResponseEntity.ok(new BaseDBModel(commentDatabase.save(comment)));
+    }
+
+    @PutMapping
+    public ResponseEntity<BaseDBModel> update(@RequestBody Comment comment){
+        return ResponseEntity.ok(new BaseDBModel(commentDatabase.update(comment)));
     }
 }

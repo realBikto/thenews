@@ -1,39 +1,30 @@
 package thenews.model;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Comment {
 
     // Attributes
-    private Long commentid;
-    private Long postid;
+    private Integer commentid;
+    private Integer postid;
     private String comment;
     private String username;
-    private LocalDate createdat;
-
-    //Constructor
-    public Comment(Long commentid, Long postid, String comment, String username, LocalDate createdat) {
-        this.commentid = commentid;
-        this.postid = postid;
-        this.comment = comment;
-        this.username = username;
-        this.createdat = createdat;
-    }
+    private Date createdat;
 
     // Getters and Setters
-    public Long getCommentid() {
+    public Integer getCommentid() {
         return commentid;
     }
 
-    public void setCommentid(Long commentid) {
+    public void setCommentid(Integer commentid) {
         this.commentid = commentid;
     }
 
-    public Long getPostid() {
+    public Integer getPostid() {
         return postid;
     }
 
-    public void setPostid(Long postid) {
+    public void setPostid(Integer postid) {
         this.postid = postid;
     }
 
@@ -53,22 +44,11 @@ public class Comment {
         this.username = username;
     }
 
-    public LocalDate getCreatedat() {
+    public Date getCreatedat() {
         return createdat;
     }
 
-    public void setCreatedat(LocalDate createdat) {
+    public void setCreatedat(Date createdat) {
         this.createdat = createdat;
-    }
-
-    @Override
-    public String toString() {
-        return "Comment{" +
-                "commentid=" + commentid +
-                ", postid=" + postid +
-                ", comment='" + comment + '\'' +
-                ", username='" + username + '\'' +
-                ", createdat=" + createdat +
-                '}';
     }
 }

@@ -12,20 +12,7 @@ public class User {
     private String email;
     private Integer roleid;
 
-    // Constructor
-
-    public User(Integer userid, String firstname, String lastname, String username, String password, String email, Integer roleid) {
-        this.userid = userid;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.roleid = roleid;
-    }
-
     // Getters and Setters
-
     public Integer getUserid() {
         return userid;
     }
@@ -80,18 +67,5 @@ public class User {
 
     public void setRoleid(Integer roleid) {
         this.roleid = roleid;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "userid=" + userid +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", roleid=" + roleid +
-                '}';
     }
 }

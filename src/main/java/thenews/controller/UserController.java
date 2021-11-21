@@ -1,11 +1,11 @@
 package thenews.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import thenews.database.impl.UserDatabase;
+import thenews.model.BaseDBModel;
 import thenews.model.User;
-import thenews.service.UserService;
 
 import java.util.List;
 
@@ -13,16 +13,26 @@ import java.util.List;
 @RequestMapping(path="api/v1/user")
 public class UserController {
 
-    private final UserService userService;
-
     @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
-
+    public UserDatabase userDatabase;
 
     @GetMapping
-    public List<User> getUsers(){
-        return userService.getAllUsers();
+    public ResponseEntity<List<User>> findAll(){
+        return ResponseEntity.ok(userDatabase.findAll());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<User> findById(@PathVariable int id) {
+        return ResponseEntity.ok(userDatabase.findById(id));
+    }
+
+    @PostMapping
+    public ResponseEntity<BaseDBModel> save(@RequestBody User user){
+        return ResponseEntity.ok(new BaseDBModel(userDatabase.save(user)));
+    }
+
+    @PutMapping
+    public ResponseEntity<BaseDBModel> update(@RequestBody User user) {
+        return ResponseEntity.ok(new BaseDBModel(userDatabase.update(user)));
     }
 }

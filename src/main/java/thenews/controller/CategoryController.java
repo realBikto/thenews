@@ -1,11 +1,11 @@
 package thenews.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import thenews.database.impl.CategoryDatabase;
+import thenews.model.BaseDBModel;
 import thenews.model.Category;
-import thenews.service.CategoryService;
 
 import java.util.List;
 
@@ -13,15 +13,26 @@ import java.util.List;
 @RequestMapping(path = "api/v1/category")
 public class CategoryController {
 
-    private CategoryService categoryService;
-
     @Autowired
-    public CategoryController(CategoryService categoryService) {
-        this.categoryService = categoryService;
-    }
+    private CategoryDatabase categoryDatabase;
 
     @GetMapping
-    public List<Category> getCategories () {
-        return categoryService.getAllCategories();
+    public ResponseEntity<List<Category>> findAll () {
+        return ResponseEntity.ok(categoryDatabase.findAll());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Category> findById (@PathVariable int id) {
+        return ResponseEntity.ok(categoryDatabase.findById(id));
+    }
+
+    @PostMapping
+    public ResponseEntity<BaseDBModel> save (@RequestBody Category category) {
+        return ResponseEntity.ok(new BaseDBModel(categoryDatabase.save(category)));
+    }
+
+    @PutMapping
+    public ResponseEntity<BaseDBModel> update (@RequestBody Category category) {
+        return ResponseEntity.ok(new BaseDBModel(categoryDatabase.update(category)));
     }
 }

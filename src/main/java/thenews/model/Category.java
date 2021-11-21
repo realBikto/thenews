@@ -1,18 +1,12 @@
 package thenews.model;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Category {
 
     private Integer categoryid;
     private String name;
-    private LocalDate createdat;
-
-    public Category(Integer categoryid, String name, LocalDate createdat) {
-        this.categoryid = categoryid;
-        this.name = name;
-        this.createdat = createdat;
-    }
+    private Date createdat;
 
     public Integer getCategoryid() {
         return categoryid;
@@ -30,20 +24,11 @@ public class Category {
         this.name = name;
     }
 
-    public LocalDate getCreatedat() {
+    public Date getCreatedat() {
         return createdat;
     }
 
-    public void setCreatedat(LocalDate createdat) {
+    public void setCreatedat(Date createdat) {
         this.createdat = createdat;
-    }
-
-    @Override
-    public String toString() {
-        return "Category{" +
-                "categoryid=" + categoryid +
-                ", name='" + name + '\'' +
-                ", createdat=" + createdat +
-                '}';
     }
 }

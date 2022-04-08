@@ -18,7 +18,7 @@ public class RoleDatabase implements RoleDB {
     @Override
     public boolean save(Role object) {
         try {
-            String sql = String.format("insert into role (name) values ('%s')", object.getName());
+            String sql = String.format("insert into news_core.role (name) values ('%s');", object.getName());
             jdbcTemplate.execute(sql);
             return true;
         } catch (Exception e) {
@@ -28,9 +28,9 @@ public class RoleDatabase implements RoleDB {
     }
 
     @Override
-    public boolean update(Role object) {
-        if (object.getRoleid() > 0){
-            String sql = String.format("update role set name = '%s' where roleid = %d", object.getName(), object.getRoleid());
+    public boolean update(int id, Role object) {
+        if (id > 0){
+            String sql = String.format("update news_core.role set name = '%s' where roleid = %d;", object.getName(), id);
             jdbcTemplate.execute(sql);
             return true;
         }
@@ -39,12 +39,30 @@ public class RoleDatabase implements RoleDB {
 
     @Override
     public List<Role> findAll() {
-        return jdbcTemplate.query("select * from news_core.role", new RoleMapper());
+        return jdbcTemplate.query("select * from news_core.role;", new RoleMapper());
     }
 
     @Override
     public Role findById(int id) {
         Object[] params = new Object[] {id};
-        return jdbcTemplate.queryForObject("select * from news_core.role where roleid = ?", params, new RoleMapper());
+        return jdbcTemplate.queryForObject("select * from news_core.role where roleid = ?;", params, new RoleMapper());
+    }
+
+    @Override
+    public boolean deleteById(int id) {
+        try{
+            String sql = String.format("delete from news_core.role where roleid = %d;", id);
+            jdbcTemplate.execute(sql);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public Role findByUser(String email) {
+        return jdbcTemplate.queryForObject("select r.* from news_core.role r inner join news_core.user_table u on " +
+                "r.roleid = u.roleid where u.email = '" + email + "';", new RoleMapper());
     }
 }

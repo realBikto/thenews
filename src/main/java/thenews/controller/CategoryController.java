@@ -23,7 +23,11 @@ public class CategoryController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Category> findById (@PathVariable int id) {
-        return ResponseEntity.ok(categoryDatabase.findById(id));
+        if (categoryDatabase.findById(id) != null){
+            return ResponseEntity.ok(categoryDatabase.findById(id));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PostMapping
@@ -32,7 +36,20 @@ public class CategoryController {
     }
 
     @PutMapping
-    public ResponseEntity<BaseDBModel> update (@RequestBody Category category) {
-        return ResponseEntity.ok(new BaseDBModel(categoryDatabase.update(category)));
+    public ResponseEntity<BaseDBModel> update (@PathVariable int id, @RequestBody Category category) {
+        if (categoryDatabase.findById(id) != null){
+            return ResponseEntity.ok(new BaseDBModel(categoryDatabase.update(id, category)));
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Category> delete(@PathVariable int id){
+        if (categoryDatabase.deleteById(id)){
+            return ResponseEntity.ok(null);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

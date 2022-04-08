@@ -31,8 +31,17 @@ public class PostController {
         return ResponseEntity.ok(new BaseDBModel(postDatabase.save(post)));
     }
 
-    @PutMapping
-    public ResponseEntity<BaseDBModel> update(@RequestBody Post post){
-        return ResponseEntity.ok(new BaseDBModel(postDatabase.update(post)));
+    @PutMapping("/{id}")
+    public ResponseEntity<BaseDBModel> update(@PathVariable int id, @RequestBody Post post){
+        if (postDatabase.findById(id) != null){
+            return ResponseEntity.ok(new BaseDBModel(postDatabase.update(id, post)));
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<BaseDBModel> delete(@PathVariable int id){
+        return ResponseEntity.ok(new BaseDBModel(postDatabase.deleteById(id)));
     }
 }

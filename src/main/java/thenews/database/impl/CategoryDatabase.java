@@ -16,37 +16,57 @@ public class CategoryDatabase implements CategoryDB {
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public boolean save(Category object) {
+    public Category save(Category object) {
         try {
             String sql = String.format("insert into news_core.category (name, createdat)" +
-                            " values ('%s','%s')", object.getName(), object.getCreatedat());
+                            " values ('%s','%s');", object.getName(), object.getCreatedat());
+            jdbcTemplate.execute(sql);
+            return findByName(object.getName());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public Category update(int id, Category object) {
+        try {
+            String sql = String.format("update news_core.category set name = '%s', createdat = '%s'" +
+                            " where categotyid = %d;", object.getName(), object.getCreatedat(), id);
+            jdbcTemplate.execute(sql);
+            return findById(object.getCategoryid());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<Category> findAll() {
+        return jdbcTemplate.query("select * from news_core.category;", new CategoryMapper());
+    }
+
+    @Override
+    public Category findById(int id) {
+        Object[] params = new Object[] {id};
+        return jdbcTemplate.queryForObject("select * from news_core.category where categoryid = ?;", params,new CategoryMapper());
+    }
+
+    @Override
+    public boolean deleteById(int id) {
+        try{
+            String sql = String.format("delete from news_core.category where categoryid = %d;", id);
             jdbcTemplate.execute(sql);
             return true;
-        } catch (Exception e) {
+        }catch (Exception e){
             e.printStackTrace();
             return false;
         }
     }
 
     @Override
-    public boolean update(Category object) {
-        if (object.getCategoryid() > 0) {
-            String sql = String.format("update news_core.category set name = '%s', createdat = '%s'" +
-                            " where categotyid = %d", object.getName(), object.getCreatedat());
-            jdbcTemplate.execute(sql);
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public List<Category> findAll() {
-        return jdbcTemplate.query("select * from news_core.category", new CategoryMapper());
-    }
-
-    @Override
-    public Category findById(int id) {
-        Object[] params = new Object[] {id};
-        return jdbcTemplate.queryForObject("select * from news_core.category where categoryid = ?", params,new CategoryMapper());
+    public Category findByName(String name) {
+        Object[] params = new Object[] {name};
+        return jdbcTemplate.queryForObject("select * from news_core.category where name = '" + name + "';", new CategoryMapper());
     }
 }

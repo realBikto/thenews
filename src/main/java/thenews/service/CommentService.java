@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface CommentService {
 
-    public List<Comment> getAllComments();
+    List<Comment> getAllComments();
+    List<Comment> findByPostId(int Id);
+    boolean save(Comment comment);
 }

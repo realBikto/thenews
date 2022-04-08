@@ -4,8 +4,9 @@ import java.util.List;
 
 public interface BaseDB<T> {
 
-    public boolean save(T object);
-    public boolean update(T object);
-    public List<T> findAll();
-    public T findById(int id);
+    boolean save(T object);
+    boolean update(int id, T object);
+    List<T> findAll();
+    T findById(int id);
+    boolean deleteById(int id);
 }

@@ -6,6 +6,8 @@ import thenews.database.impl.PostDatabase;
 import thenews.model.Post;
 import thenews.service.PostService;
 
+import java.util.List;
+
 @Service
 public class PostServiceImpl implements PostService {
 
@@ -16,4 +18,22 @@ public class PostServiceImpl implements PostService {
     public boolean saveNewPost(Post post) {
         return postDatabase.save(post);
     }
+
+    @Override
+    public Post getPostById(int id) {return postDatabase.findById(id);}
+
+    @Override
+    public List<Post> getAllPosts() {return postDatabase.findAll();}
+
+    @Override
+    public boolean update(int id, Post object) {return postDatabase.update(id, object);}
+
+    @Override
+    public boolean deleteById(int id) {return postDatabase.deleteById(id);}
+
+    @Override
+    public List<Post> findAll() {return postDatabase.findAll();}
+
+    @Override
+    public List<Post> postsWithoutSection() {return postDatabase.postsWithoutSection();}
 }

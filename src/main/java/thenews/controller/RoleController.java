@@ -31,8 +31,21 @@ public class RoleController {
         return ResponseEntity.ok(new BaseDBModel(roleDatabase.save(role)));
     }
 
-    @PutMapping
-    public ResponseEntity<BaseDBModel> update(@RequestBody Role role){
-        return ResponseEntity.ok(new BaseDBModel(roleDatabase.update(role)));
+    @PutMapping("/{id}")
+    public ResponseEntity<BaseDBModel> update(@PathVariable int id, @RequestBody Role role){
+        if (roleDatabase.findById(id) != null) {
+            return ResponseEntity.ok(new BaseDBModel(roleDatabase.update(id, role)));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Role> delete(@PathVariable int id){
+        if (roleDatabase.deleteById(id)){
+            return ResponseEntity.ok(null);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

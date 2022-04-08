@@ -24,7 +24,11 @@ public class CommentController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Comment> findById(@PathVariable int id) {
-        return ResponseEntity.ok(commentDatabase.findById(id));
+        if(commentDatabase.findById(id) != null){
+            return ResponseEntity.ok(commentDatabase.findById(id));
+        } else {
+            return ResponseEntity.noContent().build();
+        }
     }
 
     @PostMapping
@@ -33,7 +37,26 @@ public class CommentController {
     }
 
     @PutMapping
-    public ResponseEntity<BaseDBModel> update(@RequestBody Comment comment){
-        return ResponseEntity.ok(new BaseDBModel(commentDatabase.update(comment)));
+    public ResponseEntity<BaseDBModel> update(@PathVariable int id, @RequestBody Comment comment){
+        if (commentDatabase.findById(id) != null){
+            return ResponseEntity.ok(new BaseDBModel(commentDatabase.update(id, comment)));
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<BaseDBModel> delete(@PathVariable int id){
+        return ResponseEntity.ok(new BaseDBModel(commentDatabase.deleteById(id)));
+    }
+
+
+    @GetMapping("/post/{id}")
+    public ResponseEntity<List<Comment>> findByPostId(@PathVariable int id){
+        if(commentDatabase.findByPostId(id) != null){
+            return ResponseEntity.ok(commentDatabase.findByPostId(id));
+        } else {
+            return ResponseEntity.noContent().build();
+        }
     }
 }

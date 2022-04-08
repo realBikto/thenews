@@ -16,37 +16,61 @@ public class UserDatabase implements UserDB {
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public boolean save(User object) {
+    public User save(User object) {
         try {
             String sql = String.format("insert into news_core.user_table (firstname, lastname, username, password, email, roleid)" +
-                            " values ('%s','%s','%s','%s','%s',%d)", object.getFirstname(), object.getLastname(),
+                            " values ('%s','%s','%s','%s','%s',%d);", object.getFirstname(), object.getLastname(),
                     object.getUsername(), object.getPassword(), object.getEmail(), object.getRoleid());
             jdbcTemplate.execute(sql);
-            return true;
+            return findByEmail(object.getEmail());
         } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public User update(int id, User object) {
+        try {
+            String sql = String.format("update news_core.user_table set firstname = '%s', lastname = '%s', username = '%s', " +
+                            "password = '%s', email = '%s', roleid = %d where userid = %d;", object.getFirstname(),
+                    object.getLastname(), object.getUsername(), object.getPassword(), object.getEmail(),
+                    object.getRoleid(), id);
+            jdbcTemplate.execute(sql);
+            return findById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<User> findAll() {
+        return jdbcTemplate.query("select * from news_core.user_table;", new UserMapper());
+    }
+
+    @Override
+    public User findById(int id) {
+        Object[] params = new Object[] {id};
+        return jdbcTemplate.queryForObject("select * from news_core.user_table where userid = ?;", params, new UserMapper());
+    }
+
+    @Override
+    public boolean deleteById(int id) {
+        try{
+            String sql = String.format("delete from news_core.user_table where userid = %d;", id);
+            jdbcTemplate.execute(sql);
+            return true;
+        }catch (Exception e){
             e.printStackTrace();
             return false;
         }
     }
 
     @Override
-    public boolean update(User object) {
-        if (object.getUserid() > 0) {
-            String sql = String.format("update user_table set firstname = '%s', lastname = '%s', username = '%s', password = '%s', email = '%s', roleid = %d where userid = %d", object.getFirstname(), object.getLastname(), object.getUsername(), object.getPassword(), object.getEmail(), object.getRoleid(), object.getUserid());
-            jdbcTemplate.execute(sql);
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public List<User> findAll() {
-        return jdbcTemplate.query("select * from news_core.user_table", new UserMapper());
-    }
-
-    @Override
-    public User findById(int id) {
-        Object[] params = new Object[] {id};
-        return jdbcTemplate.queryForObject("select * from news_core.user_table where userid = ?", params, new UserMapper());
+    public User findByEmail(String email) {
+        Object[] params = new Object[] {email};
+        return jdbcTemplate.queryForObject("select * from news_core.user_table where email = ?;",
+                params, new UserMapper());
     }
 }

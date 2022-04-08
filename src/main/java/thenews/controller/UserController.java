@@ -28,11 +28,24 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<BaseDBModel> save(@RequestBody User user){
-        return ResponseEntity.ok(new BaseDBModel(userDatabase.save(user)));
+        if(userDatabase.save(user) != null){
+            return ResponseEntity.ok(new BaseDBModel(userDatabase.save(user)));
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
-    @PutMapping
-    public ResponseEntity<BaseDBModel> update(@RequestBody User user) {
-        return ResponseEntity.ok(new BaseDBModel(userDatabase.update(user)));
+    @PutMapping("/{id}")
+    public ResponseEntity<BaseDBModel> update(@PathVariable int id, @RequestBody User user) {
+        if (userDatabase.findById(id) != null){
+            return ResponseEntity.ok(new BaseDBModel(userDatabase.update(id, user)));
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<BaseDBModel> deleteById(@PathVariable int id){
+        return ResponseEntity.ok(new BaseDBModel(userDatabase.deleteById(id)));
     }
 }

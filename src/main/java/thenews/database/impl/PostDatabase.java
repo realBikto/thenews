@@ -18,7 +18,7 @@ public class PostDatabase implements PostDB {
     @Override
     public boolean save(Post object){
         try {
-            String sql = String.format("insert into post (title, content, userid, image, categoryid, createdat, type)" +
+            String sql = String.format("insert into news_core.post (title, content, userid, image, categoryid, createdat, type)" +
                             " values ('%s','%s',%d,'%s',%d,'%s','%s');", object.getTitle(), object.getContent(),
                     object.getUserid(), object.getImage(), object.getCategoryid(), object.getCreatedat(), object.getType());
             jdbcTemplate.execute(sql);
@@ -32,10 +32,26 @@ public class PostDatabase implements PostDB {
     @Override
     public boolean update(int id, Post object) {
         if (id > 0) {
-            String sql = String.format("update post set title = '%s', content = '%s', userid = %d, image = '%s', categoryid = %d, type = '%s' where postid = %d;",
+            String sql = String.format("update news_core.post set title = '%s', content = '%s', userid = %d, image = '%s', categoryid = %d, type = '%s' where postid = %d;",
                     object.getTitle(), object.getContent(), object.getUserid(), object.getImage(), object.getImage(), object.getCategoryid(), object.getType(), id);
             jdbcTemplate.execute(sql);
             return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean updatePost(Post object) {
+        if(object.getPostid() > 0) {
+            try {
+                String sql = String.format("update news_core.post set title = '%s', content = '%s', userid = %d, image = '%s', categoryid = %d, type = '%s' where postid = %d;",
+                        object.getTitle(), object.getContent(), object.getUserid(), object.getImage(), object.getImage(), object.getCategoryid(), object.getType(), object.getPostid());
+                jdbcTemplate.execute(sql);
+                return true;
+            } catch (Exception e) {
+                e.printStackTrace();
+                return false;
+            }
         }
         return false;
     }
@@ -71,14 +87,14 @@ public class PostDatabase implements PostDB {
     @Override
     public List<Post> getLastNews() {
         return jdbcTemplate.query("select * from news_core.post p inner join news_core.post_section ps on p.postid = ps.postid " +
-                "inner join news_core.section s on ps.sectionid = s.sectionid where s.name = 'news' " +
+                "inner join news_core.section s on ps.sectionid = s.sectionid where s.name = 'lastnews' " +
                 "order by p.postid desc limit 5;", new PostMapper());
     }
 
     @Override
-    public Post getMainTopic() {
-        return jdbcTemplate.queryForObject("select * from news_core.post p inner join news_core.post_section ps on p.postid = ps.postid " +
-                "inner join news_core.section s on ps.sectionid = s.sectionid where s.name = 'maincover' " +
+    public List<Post> getMainTopic() {
+        return jdbcTemplate.query("select * from news_core.post p inner join news_core.post_section ps on p.postid = ps.postid " +
+                "inner join news_core.section s on ps.sectionid = s.sectionid where s.name = 'maintopic' " +
                 "order by p.postid desc;", new PostMapper());
     }
 

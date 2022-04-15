@@ -8,8 +8,8 @@ public interface PostService {
 
     public boolean saveNewPost(Post post);
     Post getPostById(int id);
-    List<Post> getAllPosts();
     boolean update(int id, Post object);
+    boolean updatePost(Post object);
     boolean deleteById(int id);
     List<Post> findAll();
     List<Post> postsWithoutSection();

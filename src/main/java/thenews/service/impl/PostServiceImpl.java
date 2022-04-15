@@ -23,10 +23,10 @@ public class PostServiceImpl implements PostService {
     public Post getPostById(int id) {return postDatabase.findById(id);}
 
     @Override
-    public List<Post> getAllPosts() {return postDatabase.findAll();}
+    public boolean update(int id, Post object) {return postDatabase.update(id, object);}
 
     @Override
-    public boolean update(int id, Post object) {return postDatabase.update(id, object);}
+    public boolean updatePost(Post object) {return postDatabase.updatePost(object);}
 
     @Override
     public boolean deleteById(int id) {return postDatabase.deleteById(id);}

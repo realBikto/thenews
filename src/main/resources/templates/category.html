@@ -22,7 +22,7 @@
                 <div class="col-lg-12 post-list">
                     <!-- Start latest-post Area -->
                     <div class="latest-post-wrap">
-                        <h4 class="cat-title"> All posts </h4>
+                        <h4 class="cat-title text-capitalize" th:text="${category}"> All category posts </h4>
                         <div th:each="post : ${postsByCategory}" class="single-latest-post row align-items-center">
                             <div class="col-lg-5 post-left">
                                 <div class="feature-img relative">

@@ -32,7 +32,7 @@
                                     <a th:href="@{/post/} + ${post.postid}"><img th:src="${post.image}" alt="" /></a>
                                 </div>
                                 <ul class="tags text-capitalize">
-                                    <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" th:href="@{/category/} + ${category.categoryid}">Lifestyle</a></li>
+                                    <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" th:href="@{/category/} + ${category.name}">Category</a></li>
                                 </ul>
                             </div>
                             <div class="col-lg-7 post-right">
@@ -59,8 +59,8 @@
                                         <div class="overlay overlay-bg"></div>
                                         <a th:href="@{/post/} + ${post.postid}"><img th:src="${post.image}" alt="" /></a>
                                     </div>
-                                    <ul class="tags">
-                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" href="#">category</a></li>
+                                    <ul class="tags text-capitalize">
+                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" th:href="@{/category/} + ${category.name}">Category</a></li>
                                     </ul>
                                 </div>
                                 <div class="details">
@@ -89,8 +89,8 @@
                                         <div class="overlay overlay-bg"></div>
                                         <a th:href="@{/post/} + ${post.postid}"><img th:src="${post.image}" alt="" /></a>
                                     </div>
-                                    <ul class="tags">
-                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" href="#">category</a></li>
+                                    <ul class="tags text-capitalize">
+                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" th:href="@{/category/} + ${category.name}">Category</a></li>
                                     </ul>
                                 </div>
                                 <div class="details">
@@ -119,8 +119,8 @@
                                         <div class="overlay overlay-bg"></div>
                                         <a th:href="@{/post/} + ${post.postid}"><img th:src="${post.image}" alt="" /></a>
                                     </div>
-                                    <ul class="tags">
-                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" href="#">category</a></li>
+                                    <ul class="tags text-capitalize">
+                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" th:href="@{/category/} + ${category.name}">Category</a></li>
                                     </ul>
                                 </div>
                                 <div class="details">
@@ -149,8 +149,8 @@
                                         <div class="overlay overlay-bg"></div>
                                         <a th:href="@{/post/} + ${post.postid}"><img th:src="${post.image}" alt="" /></a>
                                     </div>
-                                    <ul class="tags">
-                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" href="#">category</a></li>
+                                    <ul class="tags text-capitalize">
+                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" th:href="@{/category/} + ${category.name}">Category</a></li>
                                     </ul>
                                 </div>
                                 <div class="details">
@@ -171,7 +171,7 @@
 
                     <!-- Opinions -->
                     <div class="popular-post-wrap">
-                        <h4 class="title">Reports</h4>
+                        <h4 class="title">Opinions</h4>
                         <div class="col-12 col-md-7 ">
                             <div th:each="post : ${opinion}" class="col-lg-6 single-popular-post">
                                 <div class="feature-img-wrap relative">
@@ -179,8 +179,8 @@
                                         <div class="overlay overlay-bg"></div>
                                         <a th:href="@{/post/} + ${post.postid}"><img th:src="${post.image}" alt="" /></a>
                                     </div>
-                                    <ul class="tags">
-                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" href="#">category</a></li>
+                                    <ul class="tags text-capitalize">
+                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" th:href="@{/category/} + ${category.name}">Category</a></li>
                                     </ul>
                                 </div>
                                 <div class="details">
@@ -209,9 +209,9 @@
                                         <div class="overlay overlay-bg"></div>
                                         <a th:href="@{/post/} + ${post.postid}"><img th:src="${post.image}" alt="" /></a>
                                     </div>
-                                    <ul class="tags">
-                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" href="#">category</a></li>
-                                    </ul>
+                                <ul class="tags text-capitalize">
+                                    <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" th:href="@{/category/} + ${category.name}">Category</a></li>
+                                </ul>
                                 </div>
                                 <div class="details">
                                     <a th:href="@{/post/} + ${post.postid}" href="post.html">

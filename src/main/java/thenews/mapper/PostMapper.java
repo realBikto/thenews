@@ -12,12 +12,12 @@ public class PostMapper implements RowMapper<Post> {
         Post post = new Post();
         post.setPostid(rs.getInt("postid"));
         post.setTitle(rs.getString("title"));
+        post.setSubtitle(rs.getString("subtitle"));
         post.setContent(rs.getString("content"));
         post.setUserid(rs.getInt("userid"));
         post.setImage(rs.getString("image"));
         post.setCategoryid(rs.getInt("categoryid"));
         post.setCreatedat(rs.getDate("createdat"));
-        post.setType(rs.getString("type"));
         return post;
     }
 

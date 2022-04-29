@@ -36,11 +36,12 @@ public class CategoryFrontController {
         List<User> users = userDB.findAll();
         modelAndView.addObject("users", users);
         modelAndView.addObject("categories", this.categoryDB.findAll());
-        modelAndView.addObject("mainTopic", this.sectionsComponent.getMainTopic());
-        modelAndView.addObject("subTopic", this.sectionsComponent.getSubTopic());
-        modelAndView.addObject("mostPopular", this.sectionsComponent.getMostPopular());
+        modelAndView.addObject("sports", this.sectionsComponent.getSports());
         modelAndView.addObject("reports", this.sectionsComponent.getReports());
         modelAndView.addObject("opinion", this.sectionsComponent.getOpinion());
+        modelAndView.addObject("international", this.sectionsComponent.getInternational());
+        modelAndView.addObject("national", this.sectionsComponent.getNational());
+        modelAndView.addObject("culture", this.sectionsComponent.getCulture());
         modelAndView.addObject("postsByCategory", this.postDB.getPostsByCategory(category));
         return modelAndView;
     }

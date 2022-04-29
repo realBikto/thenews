@@ -7,12 +7,12 @@ public class Post {
     // Attributes
     private Integer postid;
     private String title;
+    private String subtitle;
     private String content;
     private Integer userid;
     private String image;
     private Integer categoryid;
     private Date createdat;
-    private String type = "POST";
 
     // Getters and Setters
     public Integer getPostid() {
@@ -29,6 +29,14 @@ public class Post {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getSubtitle() {
+        return subtitle;
+    }
+
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
     }
 
     public String getContent() {
@@ -69,13 +77,5 @@ public class Post {
 
     public void setCreatedat(Date createdat) {
         this.createdat = createdat;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 }

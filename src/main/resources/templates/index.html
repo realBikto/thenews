@@ -1,12 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
-    <meta charset="UTF-8">
     <title>TheNews</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <div th:replace="components/style.html"></div>
 </head>
+
 <body>
+<header>
+    <div th:replace="components/header.html"></div>
+</header>
 
-<h1>TheNews - IndexPage</h1>
+<div class="site-main-container">
+    <!-- Start Últimas noticias -->
+    <section class="latest-post-area pb-120">
+        <div class="container no-padding">
+                <div class="col-lg-12">
 
+                    <!-- Start latest-post Area -->
+                    <div class="latest-post-wrap">
+                        <h4 class="cat-title">Last news</h4>
+                        <div th:each="post : ${lastnews}" class="single-latest-post row align-items-center">
+                            <div class="col-lg-5 post-left">
+                                <div class="feature-img relative">
+                                    <div class="overlay overlay-bg"></div>
+                                    <a th:href="@{/post/} + ${post.postid}"><img th:src="${post.image}" alt="" /></a>
+                                </div>
+                                <ul class="tags text-capitalize">
+                                    <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" th:href="@{/category/} + ${category.categoryid}">Lifestyle</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-7 post-right">
+                                <a th:href="@{/post/} + ${post.postid}">
+                                    <h4 th:text="${post.title}" > </h4>
+                                </a>
+                                <ul class="meta">
+                                    <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                    <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">creation date</a></li>
+                                </ul>
+                                <p th:text="${post.subtitle}" class="excert"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Últimas noticias -->
+
+                    <!-- International news -->
+                    <div class="popular-post-wrap">
+                        <h4 class="title">International</h4>
+                        <div class="col-12 col-md-7 ">
+                            <div th:each="post : ${international}" class="col-lg-6 single-popular-post">
+                                <div class="feature-img-wrap relative">
+                                    <div class="feature-img relative">
+                                        <div class="overlay overlay-bg"></div>
+                                        <a th:href="@{/post/} + ${post.postid}"><img th:src="${post.image}" alt="" /></a>
+                                    </div>
+                                    <ul class="tags">
+                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" href="#">category</a></li>
+                                    </ul>
+                                </div>
+                                <div class="details">
+                                    <a th:href="@{/post/} + ${post.postid}" href="post.html">
+                                        <h4 th:text="${post.title}">title</h4>
+                                    </a>
+                                    <ul class="meta">
+                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                        <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">creation date</a></li>
+                                    </ul>
+                                    <p th:text="${post.subtitle}"class="excert">subtitle</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End international news -->
+
+                    <!-- National news -->
+                    <div class="popular-post-wrap">
+                        <h4 class="title">National</h4>
+                        <div class="col-12 col-md-7 ">
+                            <div th:each="post : ${national}" class="col-lg-6 single-popular-post">
+                                <div class="feature-img-wrap relative">
+                                    <div class="feature-img relative">
+                                        <div class="overlay overlay-bg"></div>
+                                        <a th:href="@{/post/} + ${post.postid}"><img th:src="${post.image}" alt="" /></a>
+                                    </div>
+                                    <ul class="tags">
+                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" href="#">category</a></li>
+                                    </ul>
+                                </div>
+                                <div class="details">
+                                    <a th:href="@{/post/} + ${post.postid}" href="post.html">
+                                        <h4 th:text="${post.title}">title</h4>
+                                    </a>
+                                    <ul class="meta">
+                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                        <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">creation date</a></li>
+                                    </ul>
+                                    <p th:text="${post.subtitle}"class="excert">subtitle</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End national news -->
+
+                    <!-- Sports news -->
+                    <div class="popular-post-wrap">
+                        <h4 class="title">Sports</h4>
+                        <div class="col-12 col-md-7 ">
+                            <div th:each="post : ${sports}" class="col-lg-6 single-popular-post">
+                                <div class="feature-img-wrap relative">
+                                    <div class="feature-img relative">
+                                        <div class="overlay overlay-bg"></div>
+                                        <a th:href="@{/post/} + ${post.postid}"><img th:src="${post.image}" alt="" /></a>
+                                    </div>
+                                    <ul class="tags">
+                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" href="#">category</a></li>
+                                    </ul>
+                                </div>
+                                <div class="details">
+                                    <a th:href="@{/post/} + ${post.postid}" href="post.html">
+                                        <h4 th:text="${post.title}">title</h4>
+                                    </a>
+                                    <ul class="meta">
+                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                        <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">creation date</a></li>
+                                    </ul>
+                                    <p th:text="${post.subtitle}"class="excert">subtitle</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End sports news -->
+
+                    <!-- Culture news -->
+                    <div class="popular-post-wrap">
+                        <h4 class="title">Culture</h4>
+                        <div class="col-12 col-md-7 ">
+                            <div th:each="post : ${culture}" class="col-lg-6 single-popular-post">
+                                <div class="feature-img-wrap relative">
+                                    <div class="feature-img relative">
+                                        <div class="overlay overlay-bg"></div>
+                                        <a th:href="@{/post/} + ${post.postid}"><img th:src="${post.image}" alt="" /></a>
+                                    </div>
+                                    <ul class="tags">
+                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" href="#">category</a></li>
+                                    </ul>
+                                </div>
+                                <div class="details">
+                                    <a th:href="@{/post/} + ${post.postid}" href="post.html">
+                                        <h4 th:text="${post.title}">title</h4>
+                                    </a>
+                                    <ul class="meta">
+                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                        <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">creation date</a></li>
+                                    </ul>
+                                    <p th:text="${post.subtitle}"class="excert">subtitle</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End culture news -->
+
+                    <!-- Opinions -->
+                    <div class="popular-post-wrap">
+                        <h4 class="title">Reports</h4>
+                        <div class="col-12 col-md-7 ">
+                            <div th:each="post : ${opinion}" class="col-lg-6 single-popular-post">
+                                <div class="feature-img-wrap relative">
+                                    <div class="feature-img relative">
+                                        <div class="overlay overlay-bg"></div>
+                                        <a th:href="@{/post/} + ${post.postid}"><img th:src="${post.image}" alt="" /></a>
+                                    </div>
+                                    <ul class="tags">
+                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" href="#">category</a></li>
+                                    </ul>
+                                </div>
+                                <div class="details">
+                                    <a th:href="@{/post/} + ${post.postid}" href="post.html">
+                                        <h4 th:text="${post.title}">title</h4>
+                                    </a>
+                                    <ul class="meta">
+                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                        <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">creation date</a></li>
+                                    </ul>
+                                    <p th:text="${post.subtitle}"class="excert">subtitle</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End Opinions -->
+
+                    <!-- Reports -->
+                    <div class="popular-post-wrap">
+                        <h4 class="title">Reports</h4>
+                        <div class="col-12 col-md-7 ">
+                            <div th:each="post : ${reports}" class="col-lg-6 single-popular-post">
+                                <div class="feature-img-wrap relative">
+                                    <div class="feature-img relative">
+                                        <div class="overlay overlay-bg"></div>
+                                        <a th:href="@{/post/} + ${post.postid}"><img th:src="${post.image}" alt="" /></a>
+                                    </div>
+                                    <ul class="tags">
+                                        <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" href="#">category</a></li>
+                                    </ul>
+                                </div>
+                                <div class="details">
+                                    <a th:href="@{/post/} + ${post.postid}" href="post.html">
+                                        <h4 th:text="${post.title}">title</h4>
+                                    </a>
+                                    <ul class="meta">
+                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                        <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">creation date</a></li>
+                                    </ul>
+                                    <p th:text="${post.subtitle}"class="excert">subtitle</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End Reports -->
+
+                </div>
+            </div>
+    </section>
+    <!-- End latest-post Area -->
+</div>
 </body>
 </html>

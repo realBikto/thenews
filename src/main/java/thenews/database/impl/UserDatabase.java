@@ -1,16 +1,23 @@
 package thenews.database.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 import thenews.database.UserDB;
 import thenews.mapper.UserMapper;
 import thenews.model.User;
 
+import javax.annotation.PostConstruct;
+import javax.sql.DataSource;
 import java.util.List;
 
 @Repository
 public class UserDatabase implements UserDB {
+
+    private BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -20,7 +27,7 @@ public class UserDatabase implements UserDB {
         try {
             String sql = String.format("insert into news_core.user_table (firstname, lastname, username, password, email, roleid)" +
                             " values ('%s','%s','%s','%s','%s',%d);", object.getFirstname(), object.getLastname(),
-                    object.getUsername(), object.getPassword(), object.getEmail(), object.getRoleid());
+                    object.getEmail(), bCryptPasswordEncoder.encode(object.getPassword()), object.getEmail(), object.getRoleid());
             jdbcTemplate.execute(sql);
             return findByEmail(object.getEmail());
         } catch (Exception e) {

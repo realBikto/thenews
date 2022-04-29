@@ -40,12 +40,12 @@ public class SectionsComponent {
         return postSubTopic;
     }
 
-    public List<Post> getMostPopular() {
-        ArrayList<Post> postMostPopular = new ArrayList<>();
-        for(Post post : postDB.getMostPopular()) {
-            postMostPopular.add(post);
+    public List<Post> getSports() {
+        ArrayList<Post> postSports = new ArrayList<>();
+        for(Post post : postDB.getSports()) {
+            postSports.add(post);
         }
-        return postMostPopular;
+        return postSports;
     }
 
     public List<Post> getReports() {
@@ -62,6 +62,30 @@ public class SectionsComponent {
             postOpinion.add(post);
         }
         return postOpinion;
+    }
+
+    public List<Post> getInternational() {
+        ArrayList<Post> postInternational = new ArrayList<>();
+        for(Post post : postDB.getInternational()) {
+            postInternational.add(post);
+        }
+        return postInternational;
+    }
+
+    public List<Post> getNational() {
+        ArrayList<Post> postNational = new ArrayList<>();
+        for(Post post : postDB.getNational()) {
+            postNational.add(post);
+        }
+        return postNational;
+    }
+
+    public List<Post> getCulture() {
+        ArrayList<Post> postCulture = new ArrayList<>();
+        for(Post post : postDB.getCulture()) {
+            postCulture.add(post);
+        }
+        return postCulture;
     }
 
     public List<Section> getSections() {

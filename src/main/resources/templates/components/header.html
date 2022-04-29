@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<style>
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<div class="header-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 header-top-right no-padding">
+                <ul>
+                    <li>
+                        <div sec:authorize="isAuthenticated()" style="font-size: 14px; color: white">Welcome, <span sec:authentication="name">Username</span></div>
+                    </li>
+                    <li>
+                        <form form-method="post" th:action="@{/logout}">
+                            <button sec:authorize="isAuthenticated()" class="login-btn" type="submit">Logout</button>
+                            <button sec:authorize="isAnonymous()" th:href="@{/login}" class="login-btn" type="submit">Login</button>
+                        </form>
+                    </li>
+                    <li>
+                        <a sec:authorize="isAnonymous()" th:href="@{/register}" class="login-btn" style="font-size: 14px">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="logo-wrap">
+    <div class="container" style="text-align: center;">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-lg-4 col-md-4 col-sm-12 no-padding">
+                <a href="/">
+                    <img height=50px width="40%" class="img-fluid" src="https://androidayuda.com/wp-content/uploads/2015/09/Google-Logo.jpg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container main-menu" id="main-menu">
+    <div class="row align-items-center justify-content-between">
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li class="menu-active"><a href="/">TheNews</a></li>
+                <li><a th:href="@{/category/international}">International</a></li>
+                <li><a th:href="@{/category/national}">National</a></li>
+                <li><a th:href="@{/category/sports}">Sports</a></li>
+                <li><a th:href="@{/category/culture}">Culture</a></li>
+                <li><a th:href="@{/category/opinion}">Opinion</a></li>
+                <li><a th:href="@{/category/reports}">Reports</a></li>
+            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</div>

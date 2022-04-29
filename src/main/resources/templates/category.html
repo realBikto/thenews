@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
-    <meta charset="UTF-8">
     <title>TheNews</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <div th:replace="components/style.html"></div>
 </head>
+
 <body>
+<header>
+    <div th:replace="components/header.html"></div>
+</header>
 
-<h1>TheNews - CategoriesPage</h1>
-
+<div class="site-main-container">
+    <!-- Start latest-post Area -->
+    <section class="latest-post-area pb-120">
+        <div class="container no-padding">
+                <div class="col-lg-12 post-list">
+                    <!-- Start latest-post Area -->
+                    <div class="latest-post-wrap">
+                        <h4 class="cat-title"> All posts </h4>
+                        <div th:each="post : ${postsByCategory}" class="single-latest-post row align-items-center">
+                            <div class="col-lg-5 post-left">
+                                <div class="feature-img relative">
+                                    <div class="overlay overlay-bg"></div>
+                                    <a th:href="@{/post/} + ${post.postid}"><img th:src="${post.image}" class="img-fluid" /></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 post-right">
+                                <a th:href="@{/post/} + ${post.postid}" >
+                                    <h4 th:text="${post.title}" > </h4>
+                                </a>
+                                <ul class="meta">
+                                    <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                    <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">creation date</a></li>
+                                </ul>
+                                <p th:text="${post.subtitle}" class="excert"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End latest-post Area -->
+            </div>
+        </div>
+    </section>
+    <!-- End latest-post Area -->
+</div>
 </body>
 </html>

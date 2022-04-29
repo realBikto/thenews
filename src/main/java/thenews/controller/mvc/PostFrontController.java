@@ -59,7 +59,21 @@ public class PostFrontController {
     public String newComment(Comment comment, Model model) {
         commentService.save(comment);
         indexService.modelIndex(model);
-        return "redirect:/";
+        int postid = comment.getPostid();
+        return "redirect:/post/" + postid;
     }
 
+    @GetMapping(path = {"/{post}"})
+    public ModelAndView getArticulo(@PathVariable(required = true, name ="post") int id) {
+        ModelAndView modelAndView = new ModelAndView("post");
+        Post post = this.postService.getPostById(id);
+        List<Comment> commentsList = commentService.findByPostId(id);
+        List<User> usuarios = userService.getAllUsers();
+        modelAndView.addObject("post", post);
+        modelAndView.addObject("comment", new Comment());
+        modelAndView.addObject("commentslist", commentsList);
+        modelAndView.addObject("users", usuarios);
+        modelAndView.addObject("categories", this.categoryService.getAllCategories());
+        return modelAndView;
+    }
 }

@@ -7,9 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import thenews.database.UserDB;
 import thenews.model.User;
 import thenews.service.IndexService;
 import thenews.service.UserService;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
@@ -21,13 +24,16 @@ public class IndexController {
     @Autowired
     private IndexService indexService;
 
-    @GetMapping(path = {"/"})
+    @Autowired
+    private UserDB userDB;
+
+    @GetMapping
     public String home(Model model){
         indexService.modelIndex(model);
         return "index";
     }
 
-    @GetMapping(path = {"/login"})
+    @GetMapping(path = "/login")
     public String login(){
         return "login";
     }
@@ -41,5 +47,13 @@ public class IndexController {
     public String addNewUser(User user) {
         userService.saveNewUser(user);
         return "redirect:/";
+    }
+
+    @GetMapping("/users")
+    public String listUsers(Model model) {
+        List<User> listUsers = userDB.findAll();
+        model.addAttribute("listUsers", listUsers);
+
+        return "users";
     }
 }

@@ -19,8 +19,7 @@ public class CommentDatabase implements CommentDB {
     public boolean save(Comment object) {
         try {
             String sql = String.format("insert into news_core.comment (postid, comment, username, createdat)" +
-                    " values (%d,'%s','%s','%s');", object.getPostid(), object.getCommentid(), object.getUsername(),
-                    object.getCreatedat());
+                    " values (%d,'%s','%s',now());", object.getPostid(), object.getComment(), object.getUsername());
             jdbcTemplate.execute(sql);
             return true;
         } catch (Exception e) {
@@ -33,7 +32,7 @@ public class CommentDatabase implements CommentDB {
     public boolean update(int id, Comment object) {
         if (id > 0) {
             String sql = String.format("update news_core.comment set postid = %d, comment = '%s', username = '%s'," +
-                            " createdat = '%s' where commentid = %d;", object.getPostid(), object.getCommentid(),
+                            " createdat = '%s' where commentid = %d;", object.getPostid(), object.getComment(),
                     object.getUsername(), object.getCreatedat(), id);
             jdbcTemplate.execute(sql);
             return true;
@@ -72,7 +71,7 @@ public class CommentDatabase implements CommentDB {
 
     @Override
     public List<Comment> findByPostId(int id) {
-        List<Comment> comments = jdbcTemplate.query("select * from news_core.comment where postid = " + id + ";", new CommentMapper());
+        List<Comment> comments = jdbcTemplate.query("select * from news_core.comment where postid = " + id + " order by commentid desc limit 4 ;", new CommentMapper());
         return comments;
     }
 

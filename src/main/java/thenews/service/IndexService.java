@@ -20,12 +20,15 @@ public class IndexService {
     private UserDB userDB;
 
     public Model modelIndex(Model model){
-        model.addAttribute("lastNews", this.sectionsComponent.getLastNews());
-        model.addAttribute("mainTopic", this.sectionsComponent.getMainTopic());
+        model.addAttribute("lastnews", this.sectionsComponent.getLastNews());
+        model.addAttribute("maintopic", this.sectionsComponent.getMainTopic());
         model.addAttribute("subTopic", this.sectionsComponent.getSubTopic());
-        model.addAttribute("mostPopular", this.sectionsComponent.getMostPopular());
+        model.addAttribute("sports", this.sectionsComponent.getSports());
         model.addAttribute("reports", this.sectionsComponent.getReports());
         model.addAttribute("opinion", this.sectionsComponent.getOpinion());
+        model.addAttribute("international", this.sectionsComponent.getInternational());
+        model.addAttribute("national", this.sectionsComponent.getNational());
+        model.addAttribute("culture", this.sectionsComponent.getCulture());
         model.addAttribute("categories", this.categoryDB.findAll());
         model.addAttribute("users", this.userDB.findAll());
         return model;

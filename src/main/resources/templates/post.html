@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>TheNews</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <div th:replace="components/style.html"></div>
+</head>
+
+<body>
+<header>
+    <div th:replace="components/header.html"></div>
+</header>
+
+<div class="site-main-container">
+    <!-- Start latest-post Area -->
+    <section class="latest-post-area pb-120">
+        <div class="container no-padding">
+            <div class="row">
+                <div class="col-lg-12 post-list">
+                    <!-- Start single-post Area -->
+                    <div class="single-post-wrap">
+                        <div class="feature-img relative">
+                            <div class="overlay centered overlay-bg"></div>
+                            <img th:src="${post.image}" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="content-wrap">
+                            <ul class="tags text-capitalize mt-10">
+                                <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" th:href="@{/category/} + ${category.name}">Categories</a></li>
+                            </ul>
+                            <a href="#">
+                                <h3 th:text="${post.content}"></h3>
+                            </a>
+                            <ul class="meta pb-20">
+                                <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">Creation date</a></li>
+                                <li><span class="lnr lnr-bubble"></span><a th:text="${#arrays.length(commentslist)} + ' comments'" href="#">Comments</a></li>
+                            </ul>
+                            <div th:utext="${post.content}"> </div>
+
+                            <div class="navigation-wrap justify-content-between d-flex">
+                                <a class="prev" href="#"><span class="lnr lnr-arrow-left"></span>Previous post</a>
+                                <a class="next" href="#">Next post<span class="lnr lnr-arrow-right"></span></a>
+                            </div>
+
+                            <div class="comment-sec-area">
+                                <div class="container">
+                                    <div class="row flex-column">
+                                        <h6 th:text="${#arrays.length(commentslist)} + ' comments'">Comments</h6>
+                                        <div class="comment-list">
+                                            <div th:each="comment : ${commentslist}" class="single-comment justify-content-between d-flex">
+                                                <div class="user justify-content-between d-flex">
+                                                    <div class="desc">
+                                                        <h5><a th:text="${comment.username}" href="#"></a></h5>
+                                                        <p class="date" th:text="${#dates.format(comment.createdat, 'dd-MM-yyyy')}"></p>
+                                                        <p th:text="${comment.comment}" class="comment"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div sec:authorize="isAuthenticated()" class="comment-form">
+                            <h4 style="margin-bottom: 25px">Add comment</h4>
+                            <form th:action="@{/post/newComment}" method="post" th:object="${comment}">
+                                <input type="hidden" name="postid" th:value="${post.postid}"/>
+                                <div class="form-group col-lg-6 col-md-12 name">
+                                    <input th:field="*{username}" th:value="*{username}" class="form-control" placeholder="username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'username'">
+                                </div>
+                                <div class="form-group">
+                                    <textarea th:field="*{comment}" th:value="*{comment}" class="form-control mb-10" rows="5" name="comment" placeholder="comment" onfocus="this.placeholder = ''" onblur="this.placeholder = 'comment'" required=""></textarea>
+                                </div>
+                                <button class="primary-btn text-uppercase">Add</button>
+                            </form>
+                        </div>
+                        <div sec:authorize="isAnonymous()" class="comment-form" style="text-align: left">
+                            <h4 style="margin-bottom: 25px">You must be logged to comment</h4>
+                            <form form-method="post" th:action="@{/logout}">
+                                <button th:href="@{/login}" class="login-btn2" type="submit">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- End single-post Area -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End latest-post Area -->
+</div>
+</body>
+</html>

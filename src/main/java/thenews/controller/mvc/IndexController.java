@@ -48,12 +48,4 @@ public class IndexController {
         userService.saveNewUser(user);
         return "redirect:/";
     }
-
-    @GetMapping("/users")
-    public String listUsers(Model model) {
-        List<User> listUsers = userDB.findAll();
-        model.addAttribute("listUsers", listUsers);
-
-        return "users";
-    }
 }

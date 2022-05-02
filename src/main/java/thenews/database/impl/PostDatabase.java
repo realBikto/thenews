@@ -90,20 +90,6 @@ public class PostDatabase implements PostDB {
     }
 
     @Override
-    public List<Post> getMainTopic() {
-        return jdbcTemplate.query("select * from news_core.post p inner join news_core.post_section ps on p.postid = ps.postid " +
-                "inner join news_core.section s on ps.sectionid = s.sectionid where s.name = 'maintopic' " +
-                "order by p.postid desc limit 1;", new PostMapper());
-    }
-
-    @Override
-    public List<Post> getSubTopic() {
-        return jdbcTemplate.query("select * from news_core.post p inner join news_core.post_section ps on p.postid = ps.postid " +
-                "inner join news_core.section s on ps.sectionid = s.sectionid where s.name = 'subtopic'" +
-                "order by p.postid desc limit 1;", new PostMapper());
-    }
-
-    @Override
     public List<Post> getSports() {
         return jdbcTemplate.query("select * from news_core.post p inner join news_core.post_section ps on p.postid = ps.postid " +
                         "inner join news_core.section s on ps.sectionid = s.sectionid where s.name = 'sports' " +
@@ -156,5 +142,21 @@ public class PostDatabase implements PostDB {
         return jdbcTemplate.query("select * from news_core.post p inner join news_core.category c on p.categoryid = c.categoryid " +
                         "where c.name = '" + category + "' order by p.postid desc limit 10;",
                 new PostMapper());
+    }
+
+    @Override
+    public Post getPreviousPostInCategory(int categoryid, int postid) {
+        return jdbcTemplate.queryForObject("select p.* from (select  p.*, lag(postid) over (order by postid) as prev" +
+                " from news_core.post p where categoryid = '" + categoryid + "') x" +
+                " inner join news_core.post p on p.postid = x.prev" +
+                " where x.postid = " + postid + ";", new PostMapper());
+    }
+
+    @Override
+    public Post getNextPostInCategory(int categoryid, int postid) {
+        return jdbcTemplate.queryForObject("select p.* from (select  p.*, lead(postid) over (order by postid) as next" +
+                " from news_core.post p where categoryid = '" + categoryid + "') x" +
+                " inner join news_core.post p on p.postid = x.next" +
+                " where x.postid = " + postid + ";", new PostMapper());
     }
 }

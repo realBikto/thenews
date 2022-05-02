@@ -21,8 +21,6 @@ public class IndexService {
 
     public Model modelIndex(Model model){
         model.addAttribute("lastnews", this.sectionsComponent.getLastNews());
-        model.addAttribute("maintopic", this.sectionsComponent.getMainTopic());
-        model.addAttribute("subTopic", this.sectionsComponent.getSubTopic());
         model.addAttribute("sports", this.sectionsComponent.getSports());
         model.addAttribute("reports", this.sectionsComponent.getReports());
         model.addAttribute("opinion", this.sectionsComponent.getOpinion());

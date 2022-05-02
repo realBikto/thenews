@@ -44,8 +44,8 @@
                             <div th:utext="${post.content}"> </div>
 
                             <div class="navigation-wrap justify-content-between d-flex">
-                                <a class="prev" href="#"><span class="lnr lnr-arrow-left"></span>Previous post</a>
-                                <a class="next" href="#">Next post<span class="lnr lnr-arrow-right"></span></a>
+                                <a class="prev" th:href="@{/post/previousPost/} + ${post.postid}"><span class="lnr lnr-arrow-left"></span>Previous post</a>
+                                <a class="next" th:href="@{/post/nextPost/} + ${post.postid}">Next post<span class="lnr lnr-arrow-right"></span></a>
                             </div>
 
                             <div class="comment-sec-area">

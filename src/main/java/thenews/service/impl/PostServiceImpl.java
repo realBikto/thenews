@@ -36,4 +36,10 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<Post> postsWithoutSection() {return postDatabase.postsWithoutSection();}
+
+    @Override
+    public Post getPreviousPostInCategory(int categoryid, int postid) {return postDatabase.getPreviousPostInCategory(categoryid, postid);}
+
+    @Override
+    public Post getNextPostInCategory(int categoryid, int postid) {return postDatabase.getNextPostInCategory(categoryid, postid);}
 }

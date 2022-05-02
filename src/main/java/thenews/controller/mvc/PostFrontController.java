@@ -64,16 +64,46 @@ public class PostFrontController {
     }
 
     @GetMapping(path = {"/{post}"})
-    public ModelAndView getArticulo(@PathVariable(required = true, name ="post") int id) {
+    public ModelAndView getPost(@PathVariable(required = true, name ="post") int id) {
         ModelAndView modelAndView = new ModelAndView("post");
         Post post = this.postService.getPostById(id);
         List<Comment> commentsList = commentService.findByPostId(id);
-        List<User> usuarios = userService.getAllUsers();
+        List<User> users = userService.getAllUsers();
         modelAndView.addObject("post", post);
         modelAndView.addObject("comment", new Comment());
         modelAndView.addObject("commentslist", commentsList);
-        modelAndView.addObject("users", usuarios);
+        modelAndView.addObject("users", users);
         modelAndView.addObject("categories", this.categoryService.getAllCategories());
         return modelAndView;
+    }
+
+    @GetMapping("/previousPost/{post}")
+    public String getPreviousPostInCategory(@PathVariable(required = true, name ="post") int postid) {
+        ModelAndView modelAndView = new ModelAndView("post");
+        Post post = this.postService.getPostById(postid);
+        Post previousPost = this.postService.getPreviousPostInCategory(post.getCategoryid(), post.getPostid());
+        List<Comment> commentsList = this.commentService.findByPostId(previousPost.getPostid());
+        modelAndView.addObject("post", previousPost);
+        List<User> users = this.userService.getAllUsers();
+        modelAndView.addObject("comment", new Comment());
+        modelAndView.addObject("commentslist", commentsList);
+        modelAndView.addObject("users", users);
+        modelAndView.addObject("categories", this.categoryService.getAllCategories());
+        return "redirect:/post/" + previousPost.getPostid();
+    }
+
+    @GetMapping("/nextPost/{post}")
+    public String getNextPostInCategory(@PathVariable(required = true, name ="post") int postid) {
+        ModelAndView modelAndView = new ModelAndView("post");
+        Post post = this.postService.getPostById(postid);
+        Post nextPost = this.postService.getNextPostInCategory(post.getCategoryid(), post.getPostid());
+        List<Comment> commentsList = this.commentService.findByPostId(nextPost.getPostid());
+        modelAndView.addObject("post", nextPost);
+        List<User> users = this.userService.getAllUsers();
+        modelAndView.addObject("comment", new Comment());
+        modelAndView.addObject("commentslist", commentsList);
+        modelAndView.addObject("users", users);
+        modelAndView.addObject("categories", this.categoryService.getAllCategories());
+        return "redirect:/post/" + nextPost.getPostid();
     }
 }

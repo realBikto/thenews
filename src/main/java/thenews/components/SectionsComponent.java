@@ -27,19 +27,6 @@ public class SectionsComponent {
         return postLastNews;
     }
 
-    public List<Post> getMainTopic() {
-        List<Post> postMainTopic = postDB.getMainTopic();
-        return postMainTopic;
-    }
-
-    public List<Post> getSubTopic() {
-        ArrayList<Post> postSubTopic = new ArrayList<>();
-        for(Post post : postDB.getSubTopic()) {
-            postSubTopic.add(post);
-        }
-        return postSubTopic;
-    }
-
     public List<Post> getSports() {
         ArrayList<Post> postSports = new ArrayList<>();
         for(Post post : postDB.getSports()) {

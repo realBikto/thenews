@@ -146,9 +146,9 @@ public class PostDatabase implements PostDB {
 
     @Override
     public Post getPreviousPostInCategory(int categoryid, int postid) {
-        return jdbcTemplate.queryForObject("select p.* from (select  p.*, lag(postid) over (order by postid) as prev" +
-                " from news_core.post p where categoryid = '" + categoryid + "') x" +
-                " inner join news_core.post p on p.postid = x.prev" +
+        return jdbcTemplate.queryForObject("select p.* from (select  *, lag(postid) over (order by postid) as prev" +
+                " from news_core.post where categoryid = '" + categoryid + "') x" +
+                " inner join news_core.post p on p.postid = coalesce(x.prev, x.postid)" +
                 " where x.postid = " + postid + ";", new PostMapper());
     }
 
@@ -156,7 +156,7 @@ public class PostDatabase implements PostDB {
     public Post getNextPostInCategory(int categoryid, int postid) {
         return jdbcTemplate.queryForObject("select p.* from (select  p.*, lead(postid) over (order by postid) as next" +
                 " from news_core.post p where categoryid = '" + categoryid + "') x" +
-                " inner join news_core.post p on p.postid = x.next" +
+                " inner join news_core.post p on p.postid = coalesce(x.next, x.postid)" +
                 " where x.postid = " + postid + ";", new PostMapper());
     }
 }

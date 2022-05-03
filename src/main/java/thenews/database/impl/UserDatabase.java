@@ -41,8 +41,8 @@ public class UserDatabase implements UserDB {
         try {
             String sql = String.format("update news_core.user_table set firstname = '%s', lastname = '%s', username = '%s', " +
                             "password = '%s', email = '%s', roleid = %d where userid = %d;", object.getFirstname(),
-                    object.getLastname(), object.getUsername(), object.getPassword(), object.getEmail(),
-                    object.getRoleid(), id);
+                    object.getLastname(), object.getEmail(), bCryptPasswordEncoder.encode(object.getPassword()),
+                    object.getEmail(), object.getRoleid(), id);
             jdbcTemplate.execute(sql);
             return findById(id);
         } catch (Exception e) {

@@ -41,7 +41,7 @@ public class AdministratorController {
 
     @GetMapping(path = {"/posts"})
     public ModelAndView getPostList() {
-        ModelAndView modelAndView = new ModelAndView("posts");
+        ModelAndView modelAndView = new ModelAndView("post-management");
         modelAndView.addObject("posts", this.postService.findAll());
         modelAndView.addObject("categories", this.categoryService.getAllCategories());
         return modelAndView;

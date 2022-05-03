@@ -8,6 +8,22 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #04091e;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 16px 16px;
+        z-index: 1;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 </style>
 
 <div class="header-top">
@@ -54,6 +70,13 @@
                 <li><a th:href="@{/category/culture}">Culture</a></li>
                 <li><a th:href="@{/category/opinion}">Opinion</a></li>
                 <li><a th:href="@{/category/reports}">Reports</a></li>
+                <li sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown" style="float: right; text-align: center; alignment: center; cursor: pointer; color: #fff; display: inline-block;"><a>Admin</a>
+                    <div class="dropdown-content">
+                        <p><a th:href="@{/post/newPost}">Write new post</a></p>
+                        <br>
+                        <p><a th:href="@{/admin/posts}">Posts management</a></p>
+                    </div>
+                </li>
             </ul>
         </nav><!-- #nav-menu-container -->
     </div>

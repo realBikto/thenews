@@ -23,9 +23,9 @@ public class UserDetailsSecurityModel implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        List<GrantedAuthority> authorities = new ArrayList<>();
+        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 
-        GrantedAuthority authority = new SimpleGrantedAuthority(this.role.getName());
+        SimpleGrantedAuthority authority = new SimpleGrantedAuthority("ROLE_" + this.role.getName());
         authorities.add(authority);
         return authorities;
     }
@@ -58,9 +58,5 @@ public class UserDetailsSecurityModel implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
-    }
-
-    public String getFullName() {
-        return user.getFirstname() + " " + user.getLastname();
     }
 }

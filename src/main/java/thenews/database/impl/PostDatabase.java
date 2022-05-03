@@ -58,7 +58,7 @@ public class PostDatabase implements PostDB {
 
     @Override
     public List<Post> findAll() {
-        return jdbcTemplate.query("select * from news_core.post;", new PostMapper());
+        return jdbcTemplate.query("select * from news_core.post order by postid desc;", new PostMapper());
     }
 
     @Override

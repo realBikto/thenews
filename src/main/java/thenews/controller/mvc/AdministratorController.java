@@ -76,8 +76,9 @@ public class AdministratorController {
     }
 
     @GetMapping("/deletePost")
-    public String deletePost(Post post) {
-        postService.deleteById((int) post.getPostid());
+    public String deletePost(Post post, Model model) {
+        postService.deleteById(post.getPostid());
+        indexService.modelIndex(model);
         return "redirect:/admin/posts";
     }
 

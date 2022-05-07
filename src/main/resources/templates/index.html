@@ -52,7 +52,8 @@
                     <!-- International news -->
                     <div class="popular-post-wrap">
                         <h4 class="title">International</h4>
-                        <div class="col-12 col-md-7 ">
+                        <div class="col-6">
+                            <div class="row-no-wrap">
                             <div th:each="post : ${international}" class="col-lg-6 single-popular-post">
                                 <div class="feature-img-wrap relative">
                                     <div class="feature-img relative">
@@ -74,7 +75,7 @@
                                     <p th:text="${post.subtitle}"class="excert">subtitle</p>
                                 </div>
                             </div>
-
+                        </div>
                         </div>
                     </div>
                     <!-- End international news -->
@@ -82,7 +83,8 @@
                     <!-- National news -->
                     <div class="popular-post-wrap">
                         <h4 class="title">National</h4>
-                        <div class="col-12 col-md-7 ">
+                        <div class="col-6">
+                            <div class="row-no-wrap">
                             <div th:each="post : ${national}" class="col-lg-6 single-popular-post">
                                 <div class="feature-img-wrap relative">
                                     <div class="feature-img relative">
@@ -104,7 +106,7 @@
                                     <p th:text="${post.subtitle}"class="excert">subtitle</p>
                                 </div>
                             </div>
-
+                            </div>
                         </div>
                     </div>
                     <!-- End national news -->
@@ -112,7 +114,8 @@
                     <!-- Sports news -->
                     <div class="popular-post-wrap">
                         <h4 class="title">Sports</h4>
-                        <div class="col-12 col-md-7 ">
+                        <div class="col-6">
+                            <div class="row-no-wrap">
                             <div th:each="post : ${sports}" class="col-lg-6 single-popular-post">
                                 <div class="feature-img-wrap relative">
                                     <div class="feature-img relative">
@@ -134,7 +137,7 @@
                                     <p th:text="${post.subtitle}"class="excert">subtitle</p>
                                 </div>
                             </div>
-
+                            </div>
                         </div>
                     </div>
                     <!-- End sports news -->
@@ -142,7 +145,8 @@
                     <!-- Culture news -->
                     <div class="popular-post-wrap">
                         <h4 class="title">Culture</h4>
-                        <div class="col-12 col-md-7 ">
+                        <div class="col-6">
+                            <div class="row-no-wrap">
                             <div th:each="post : ${culture}" class="col-lg-6 single-popular-post">
                                 <div class="feature-img-wrap relative">
                                     <div class="feature-img relative">
@@ -164,7 +168,7 @@
                                     <p th:text="${post.subtitle}"class="excert">subtitle</p>
                                 </div>
                             </div>
-
+                            </div>
                         </div>
                     </div>
                     <!-- End culture news -->
@@ -172,7 +176,8 @@
                     <!-- Opinions -->
                     <div class="popular-post-wrap">
                         <h4 class="title">Opinions</h4>
-                        <div class="col-12 col-md-7 ">
+                        <div class="col-6">
+                            <div class="row-no-wrap">
                             <div th:each="post : ${opinion}" class="col-lg-6 single-popular-post">
                                 <div class="feature-img-wrap relative">
                                     <div class="feature-img relative">
@@ -194,7 +199,7 @@
                                     <p th:text="${post.subtitle}"class="excert">subtitle</p>
                                 </div>
                             </div>
-
+                            </div>
                         </div>
                     </div>
                     <!-- End Opinions -->
@@ -202,7 +207,8 @@
                     <!-- Reports -->
                     <div class="popular-post-wrap">
                         <h4 class="title">Reports</h4>
-                        <div class="col-12 col-md-7 ">
+                        <div class="col-6">
+                            <div class="row-no-wrap">
                             <div th:each="post : ${reports}" class="col-lg-6 single-popular-post">
                                 <div class="feature-img-wrap relative">
                                     <div class="feature-img relative">
@@ -224,11 +230,10 @@
                                     <p th:text="${post.subtitle}"class="excert">subtitle</p>
                                 </div>
                             </div>
-
+                            </div>
                         </div>
                     </div>
                     <!-- End Reports -->
-
                 </div>
             </div>
     </section>

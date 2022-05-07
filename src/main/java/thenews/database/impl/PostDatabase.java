@@ -45,7 +45,7 @@ public class PostDatabase implements PostDB {
         if(object.getPostid() > 0) {
             try {
                 String sql = String.format("update news_core.post set title = '%s', subtitle = '%s', content = '%s', userid = %d, image = '%s', categoryid = %d where postid = %d;",
-                        object.getTitle(), object.getSubtitle(), object.getContent(), object.getUserid(), object.getImage(), object.getImage(), object.getCategoryid(), object.getPostid());
+                        object.getTitle(), object.getSubtitle(), object.getContent(), object.getUserid(), object.getImage(), object.getCategoryid(), object.getPostid());
                 jdbcTemplate.execute(sql);
                 return true;
             } catch (Exception e) {

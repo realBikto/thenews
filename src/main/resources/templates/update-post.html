@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="hero-nav-area">
-                        <h1 class="text-white">New post</h1>
+                        <h1 class="text-white">Modify post</h1>
                     </div>
                 </div>
             </div>
@@ -34,31 +34,31 @@
         <div class="container">
             <div class="row contact-wrap">
                 <div class="col-lg-12 form-area contact-form text-left" id="post">
-                    <form th:action="@{/post/addNewPost}" method="post" th:object="${post}" class="form-area contact-form text-left" id="myPost">
+                    <form name="f" th:action="@{/admin/modifyPost}" method="post" th:object="${post}">
                         <div>
                             <div class="col-lg-12">
+                                <input type="hidden" name="postid" th:value="${post.postid}"/>
                                 <label for="postid">Title</label>
-                                <input th:field="*{title}" th:value="*{title}" name="title" th:maxlength="75" placeholder="Post title" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter the title'" class="common-input mb-20 form-control" required="" type="text">
+                                <input th:field="*{title}" th:value="*{title}" th:placeholder="${post.title}" name="name" class="common-input mb-20 form-control" required="" type="text">
                                 <label for="postid">Subtitle</label>
-                                <input th:field="*{subtitle}" th:value="*{subtitle}" name="subtitle" th:maxlength="125" placeholder="Post subtitle" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter the subtitle'" class="common-input mb-20 form-control" required="" type="text">
+                                <input th:field="*{subtitle}" th:value="*{subtitle}" name="email" placeholder="Post subtitle" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Post subtitle'" class="common-input mb-20 form-control" required="" type="text">
                                 <label for="postid">Category</label>
-                                <select th:field="*{categoryid}" name="_category" id="inputCategory" class="common-input mb-20 form-control text-capitalize">
+                                <select th:field="*{categoryid}" name="_categoria" id="inputCategory" class="common-input mb-20 form-control text-capitalize">
                                     <option th:each="category : ${categories}" th:value="${category.categoryid}"  th:text="${category.name}"></option>
                                 </select>
-                                <label for="postid">User:</label>
+                                <label for="postid">User</label>
                                 <select th:field="*{userid}" class="common-input mb-20 form-control">
-                                    <option th:each="user : ${users}" th:value="${user.userid}"  th:text="${user.getFirstname() + ' ' + user.getLastname()}"></option>
+                                    <option th:each="user : ${users}" th:value="${user.userid}"  th:text="${user.firstname + ' ' + user.lastname}"></option>
                                 </select>
-                                <label for="postid">Image:</label>
-                                <input th:field="*{image}" th:value="*{image}" name="subject" placeholder="Post image URL" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter the image URL'" class="common-input mb-20 form-control" required="" type="text">
+                                <label for="postid">Image</label>
+                                <input th:field="*{image}" th:value="*{image}" name="subject" placeholder="Image URL" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Image URL'" class="common-input mb-20 form-control" required="" type="text">
                                 <label for="postid">Content</label>
                                 <textarea th:field="*{content}" th:value="*{content}" style="width:100%; height:30%;"></textarea>
                                 <br>
                                 <br>
                                 <div class="col-lg-12">
                                     <div class="alert-msg" style="text-align: left;"></div>
-                                    <br><br>
-                                    <button class="primary-btn primary" style="float: left;">Post</button>
+                                    <button type="submit" class="primary-btn primary" style="float: left;">Save changes</button>
                                 </div>
                             </div>
                         </div>

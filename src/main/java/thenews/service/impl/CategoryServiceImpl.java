@@ -3,8 +3,8 @@ package thenews.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import thenews.database.CategoryDB;
-import thenews.service.CategoryService;
 import thenews.model.Category;
+import thenews.service.CategoryService;
 
 import java.util.List;
 

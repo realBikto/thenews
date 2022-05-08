@@ -6,5 +6,4 @@ import java.util.List;
 
 public interface PermissionDB extends BaseDB<Permission>{
 
-    List<Permission> findByUser(String email);
 }

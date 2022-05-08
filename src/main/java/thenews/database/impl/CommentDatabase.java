@@ -23,7 +23,6 @@ public class CommentDatabase implements CommentDB {
             jdbcTemplate.execute(sql);
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
             return false;
         }
     }
@@ -47,8 +46,7 @@ public class CommentDatabase implements CommentDB {
 
     @Override
     public Comment findById(int id) {
-        Object[] params = new Object[] {id};
-        return jdbcTemplate.queryForObject("select * from news_core.comment where commentid = ?;", params, new CommentMapper());
+        return jdbcTemplate.queryForObject("select * from news_core.comment where commentid = " + id + ";", new CommentMapper());
     }
 
     @Override
@@ -58,21 +56,13 @@ public class CommentDatabase implements CommentDB {
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e){
-            e.printStackTrace();
             return false;
         }
     }
 
     @Override
-    public Comment findByComment(String comment) {
-        Object[] params = new Object[] {comment};
-        return jdbcTemplate.queryForObject("select * from news_core.comment where commentid = '" + comment + "';", new CommentMapper());
-    }
-
-    @Override
     public List<Comment> findByPostId(int id) {
-        List<Comment> comments = jdbcTemplate.query("select * from news_core.comment where postid = " + id + " order by commentid desc limit 4 ;", new CommentMapper());
-        return comments;
+        return jdbcTemplate.query("select * from news_core.comment where postid = " + id + " order by commentid desc limit 4 ;", new CommentMapper());
     }
 
 }

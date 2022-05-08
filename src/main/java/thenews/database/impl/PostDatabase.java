@@ -24,7 +24,6 @@ public class PostDatabase implements PostDB {
             jdbcTemplate.execute(sql);
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
             return false;
         }
     }
@@ -33,7 +32,7 @@ public class PostDatabase implements PostDB {
     public boolean update(int id, Post object) {
         if (id > 0) {
             String sql = String.format("update news_core.post set title = '%s', subtitle = '%s', content = '%s', userid = %d, image = '%s', categoryid = %d where postid = %d;",
-                    object.getTitle(), object.getSubtitle(), object.getContent(), object.getUserid(), object.getImage(), object.getImage(), object.getCategoryid(), id);
+                    object.getTitle(), object.getSubtitle(), object.getContent(), object.getUserid(), object.getImage(), object.getCategoryid(), id);
             jdbcTemplate.execute(sql);
             return true;
         }
@@ -49,7 +48,6 @@ public class PostDatabase implements PostDB {
                 jdbcTemplate.execute(sql);
                 return true;
             } catch (Exception e) {
-                e.printStackTrace();
                 return false;
             }
         }
@@ -63,8 +61,7 @@ public class PostDatabase implements PostDB {
 
     @Override
     public Post findById(int id) {
-        Object[] params = new Object[] {id};
-        return jdbcTemplate.queryForObject("select * from news_core.post where postid = ?;", params, new PostMapper());
+        return jdbcTemplate.queryForObject("select * from news_core.post where postid = " + id + ";", new PostMapper());
     }
 
     @Override
@@ -74,14 +71,8 @@ public class PostDatabase implements PostDB {
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e){
-            e.printStackTrace();
             return false;
         }
-    }
-
-    @Override
-    public List<Post> postsWithoutSection() {
-        return jdbcTemplate.query("select p.* from news_core.post p left join news_core.post_section ps on ps.postid = p.postid where ps.sectionid is null;", new PostMapper());
     }
 
     @Override

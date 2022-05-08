@@ -22,7 +22,6 @@ public class RoleDatabase implements RoleDB {
             jdbcTemplate.execute(sql);
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
             return false;
         }
     }
@@ -44,8 +43,7 @@ public class RoleDatabase implements RoleDB {
 
     @Override
     public Role findById(int id) {
-        Object[] params = new Object[] {id};
-        return jdbcTemplate.queryForObject("select * from news_core.role where roleid = ?;", params, new RoleMapper());
+        return jdbcTemplate.queryForObject("select * from news_core.role where roleid = " + id + ";", new RoleMapper());
     }
 
     @Override
@@ -55,7 +53,6 @@ public class RoleDatabase implements RoleDB {
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e){
-            e.printStackTrace();
             return false;
         }
     }

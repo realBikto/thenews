@@ -1,8 +1,6 @@
 package thenews.database.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
@@ -10,14 +8,12 @@ import thenews.database.UserDB;
 import thenews.mapper.UserMapper;
 import thenews.model.User;
 
-import javax.annotation.PostConstruct;
-import javax.sql.DataSource;
 import java.util.List;
 
 @Repository
 public class UserDatabase implements UserDB {
 
-    private BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+    private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -31,7 +27,6 @@ public class UserDatabase implements UserDB {
             jdbcTemplate.execute(sql);
             return findByEmail(object.getEmail());
         } catch (Exception e) {
-            e.printStackTrace();
             return null;
         }
     }
@@ -46,7 +41,6 @@ public class UserDatabase implements UserDB {
             jdbcTemplate.execute(sql);
             return findById(id);
         } catch (Exception e) {
-            e.printStackTrace();
             return null;
         }
     }
@@ -58,8 +52,7 @@ public class UserDatabase implements UserDB {
 
     @Override
     public User findById(int id) {
-        Object[] params = new Object[] {id};
-        return jdbcTemplate.queryForObject("select * from news_core.user_table where userid = ?;", params, new UserMapper());
+        return jdbcTemplate.queryForObject("select * from news_core.user_table where userid = " + id + ";", new UserMapper());
     }
 
     @Override
@@ -69,15 +62,13 @@ public class UserDatabase implements UserDB {
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e){
-            e.printStackTrace();
             return false;
         }
     }
 
     @Override
     public User findByEmail(String email) {
-        Object[] params = new Object[] {email};
-        return jdbcTemplate.queryForObject("select * from news_core.user_table where email = ?;",
-                params, new UserMapper());
+        return jdbcTemplate.queryForObject("select * from news_core.user_table where email = " + email + ";",
+                new UserMapper());
     }
 }

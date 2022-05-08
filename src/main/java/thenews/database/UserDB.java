@@ -1,6 +1,5 @@
 package thenews.database;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import thenews.model.User;
 
 import java.util.List;

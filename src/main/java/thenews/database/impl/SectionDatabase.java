@@ -22,7 +22,6 @@ public class SectionDatabase implements SectionDB {
             jdbcTemplate.execute(sql);
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
             return false;
         }
     }
@@ -45,8 +44,7 @@ public class SectionDatabase implements SectionDB {
     @Override
     public Section findById(int id) {
         try {
-            Object[] params = new Object[]{id};
-            return jdbcTemplate.queryForObject("select * from news_core.section where sectionid = ?", params, new SectionMapper());
+            return jdbcTemplate.queryForObject("select * from news_core.section where sectionid = " + id + "", new SectionMapper());
         } catch (Exception e) {
             return null;
         }
@@ -59,7 +57,6 @@ public class SectionDatabase implements SectionDB {
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e){
-            e.printStackTrace();
             return false;
         }
     }

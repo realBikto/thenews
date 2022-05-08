@@ -23,7 +23,6 @@ public class RolePermissionDatabase implements RolePermissionDB {
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e) {
-            e.printStackTrace();
             return false;
         }
     }
@@ -44,9 +43,8 @@ public class RolePermissionDatabase implements RolePermissionDB {
 
     @Override
     public RolePermission findById(int id) {
-        Object[] params = new Object[] {id};
-        return jdbcTemplate.queryForObject("select * from news_core.role_permission where rolepermissionid = ?;",
-                params, new RolePermissionMapper());
+        return jdbcTemplate.queryForObject("select * from news_core.role_permission where rolepermissionid = " + id + ";",
+                 new RolePermissionMapper());
     }
 
     @Override
@@ -56,7 +54,6 @@ public class RolePermissionDatabase implements RolePermissionDB {
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e){
-            e.printStackTrace();
             return false;
         }
     }

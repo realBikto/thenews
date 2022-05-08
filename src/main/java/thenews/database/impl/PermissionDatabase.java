@@ -23,7 +23,6 @@ public class PermissionDatabase implements PermissionDB {
             jdbcTemplate.execute(sql);
             return true;
         }catch(Exception e) {
-            e.printStackTrace();
             return false;
         }
     }
@@ -46,9 +45,8 @@ public class PermissionDatabase implements PermissionDB {
 
     @Override
     public Permission findById(int id) {
-        Object[] params = new Object[] {id};
-        return jdbcTemplate.queryForObject("select * from news_core.permission where permissionid = ?;",
-                params, new PermissionMapper());
+        return jdbcTemplate.queryForObject("select * from news_core.permission where permissionid = " + id + ";",
+                new PermissionMapper());
     }
 
     @Override
@@ -62,13 +60,4 @@ public class PermissionDatabase implements PermissionDB {
             return false;
         }
     }
-
-    @Override
-    public List<Permission> findByUser(String email) {
-        return jdbcTemplate.query("select p.* from news_core.permission p" +
-                " inner join news_core.role_permission gp on p.permissionid = gp.permissionid" +
-                " inner join news_core.user_table u on gp.roleid = u.roleid" +
-                " where u.email = '" + email + "';", new PermissionMapper());
-    }
-
 }

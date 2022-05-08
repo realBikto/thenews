@@ -23,7 +23,6 @@ public class CategoryDatabase implements CategoryDB {
             jdbcTemplate.execute(sql);
             return findByName(object.getName());
         } catch (Exception e) {
-            e.printStackTrace();
             return null;
         }
     }
@@ -32,11 +31,10 @@ public class CategoryDatabase implements CategoryDB {
     public Category update(int id, Category object) {
         try {
             String sql = String.format("update news_core.category set name = '%s', createdat = '%s'" +
-                            " where categotyid = %d;", object.getName(), object.getCreatedat(), id);
+                            " where categoryid = %d;", object.getName(), object.getCreatedat(), id);
             jdbcTemplate.execute(sql);
             return findById(object.getCategoryid());
         } catch (Exception e) {
-            e.printStackTrace();
             return null;
         }
     }
@@ -48,8 +46,7 @@ public class CategoryDatabase implements CategoryDB {
 
     @Override
     public Category findById(int id) {
-        Object[] params = new Object[] {id};
-        return jdbcTemplate.queryForObject("select * from news_core.category where categoryid = ?;", params,new CategoryMapper());
+        return jdbcTemplate.queryForObject("select * from news_core.category where categoryid = " + id + ";", new CategoryMapper());
     }
 
     @Override
@@ -59,14 +56,12 @@ public class CategoryDatabase implements CategoryDB {
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e){
-            e.printStackTrace();
             return false;
         }
     }
 
     @Override
     public Category findByName(String name) {
-        Object[] params = new Object[] {name};
         return jdbcTemplate.queryForObject("select * from news_core.category where name = '" + name + "';", new CategoryMapper());
     }
 }

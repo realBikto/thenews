@@ -20,67 +20,35 @@ public class SectionsComponent {
     SectionDB sectionDB;
 
     public List<Post> getLastNews() {
-        ArrayList<Post> postLastNews = new ArrayList<>();
-        for(Post post : postDB.getLastNews()) {
-            postLastNews.add(post);
-        }
-        return postLastNews;
+        return new ArrayList<>(postDB.getLastNews());
     }
 
     public List<Post> getSports() {
-        ArrayList<Post> postSports = new ArrayList<>();
-        for(Post post : postDB.getSports()) {
-            postSports.add(post);
-        }
-        return postSports;
+        return new ArrayList<>(postDB.getSports());
     }
 
     public List<Post> getReports() {
-        ArrayList<Post> postReports = new ArrayList<>();
-        for(Post post : postDB.getReports()) {
-            postReports.add(post);
-        }
-        return postReports;
+        return new ArrayList<>(postDB.getReports());
     }
 
     public List<Post> getOpinion() {
-        ArrayList<Post> postOpinion = new ArrayList<>();
-        for(Post post : postDB.getOpinion()) {
-            postOpinion.add(post);
-        }
-        return postOpinion;
+        return new ArrayList<>(postDB.getOpinion());
     }
 
     public List<Post> getInternational() {
-        ArrayList<Post> postInternational = new ArrayList<>();
-        for(Post post : postDB.getInternational()) {
-            postInternational.add(post);
-        }
-        return postInternational;
+        return new ArrayList<>(postDB.getInternational());
     }
 
     public List<Post> getNational() {
-        ArrayList<Post> postNational = new ArrayList<>();
-        for(Post post : postDB.getNational()) {
-            postNational.add(post);
-        }
-        return postNational;
+        return new ArrayList<>(postDB.getNational());
     }
 
     public List<Post> getCulture() {
-        ArrayList<Post> postCulture = new ArrayList<>();
-        for(Post post : postDB.getCulture()) {
-            postCulture.add(post);
-        }
-        return postCulture;
+        return new ArrayList<>(postDB.getCulture());
     }
 
     public List<Section> getSections() {
-        ArrayList<Section> sectionList = new ArrayList<>();
-        for(Section section : sectionDB.findAll()) {
-            sectionList.add(section);
-        }
-        return sectionList;
+        return new ArrayList<>(sectionDB.findAll());
     }
 
 

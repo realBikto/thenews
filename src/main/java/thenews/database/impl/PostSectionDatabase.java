@@ -22,7 +22,6 @@ public class PostSectionDatabase implements PostSectionDB {
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e) {
-            e.printStackTrace();
             return false;
         }
     }
@@ -44,9 +43,8 @@ public class PostSectionDatabase implements PostSectionDB {
 
     @Override
     public PostSection findById(int id) {
-        Object[] params = new Object[] {id};
-        return jdbcTemplate.queryForObject("select * from news_core.post_section where postsectionid = ?",
-                params, new PostSectionMapper());
+        return jdbcTemplate.queryForObject("select * from news_core.post_section where postsectionid = " + id + ";",
+                new PostSectionMapper());
     }
 
     @Override
@@ -56,17 +54,15 @@ public class PostSectionDatabase implements PostSectionDB {
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e){
-            e.printStackTrace();
             return false;
         }
     }
 
     @Override
-    public PostSection findByPostId(int Id) {
+    public PostSection findByPostId(int id) {
         try {
-            Object[] params = new Object[] {Id};
-            return jdbcTemplate.queryForObject("select * from news_core.post_section where postid = ?",
-                    params, new PostSectionMapper());
+            return jdbcTemplate.queryForObject("select * from news_core.post_section where postid = " + id + ";",
+                    new PostSectionMapper());
         } catch (Exception e) {
             return new PostSection();
         }
@@ -74,13 +70,11 @@ public class PostSectionDatabase implements PostSectionDB {
     }
 
     @Override
-    public List<PostSection> findBySectionId(int Id) {
+    public List<PostSection> findBySectionId(int id) {
         try {
-            Object[] params = new Object[] {Id};
-            return jdbcTemplate.query("select * from news_core.post_section where sectionid = ?",
-                    params, new PostSectionMapper());
+            return jdbcTemplate.query("select * from news_core.post_section where sectionid = " + id + ";",
+                     new PostSectionMapper());
         } catch (Exception e) {
-            e.printStackTrace();
             return null;
         }
 
@@ -93,7 +87,6 @@ public class PostSectionDatabase implements PostSectionDB {
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e){
-            e.printStackTrace();
             return false;
         }
     }

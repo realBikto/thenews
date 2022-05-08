@@ -6,6 +6,5 @@ import java.util.List;
 
 public interface CommentDB extends BaseDB<Comment>{
 
-    Comment findByComment(String comment);
     List<Comment> findByPostId(int id);
 }

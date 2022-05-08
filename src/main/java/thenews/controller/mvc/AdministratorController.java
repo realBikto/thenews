@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import thenews.components.SectionsComponent;
 import thenews.model.*;
 import thenews.service.*;
 
@@ -17,9 +16,6 @@ import java.util.List;
 @Component
 @RequestMapping("/admin")
 public class AdministratorController {
-
-    @Autowired
-    private SectionsComponent sectionsComponent;
 
     @Autowired
     private PostService postService;

@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface PostDB extends BaseDB<Post>{
 
-    List<Post> postsWithoutSection();
     List<Post> getLastNews();
     List<Post> getSports();
     List<Post> getReports();

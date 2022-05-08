@@ -38,28 +38,32 @@
                         <thead class="thead-news">
                         <tr>
                             <th scope="col">Post ID</th>
-                            <th scope="col">Name</th>
+                            <th scope="col">Title</th>
                             <th scope="col">Category</th>
                             <th scope="col">Creation date</th>
-                            <th scope="col" style="text-align: center">Action</th>
+                            <th scope="col" style="text-align: center">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr th:each="post : ${posts}">
                             <th class="td-news" style="vertical-align: middle" scope="row" th:text="${post.postid}"></th>
-                            <td class="td-news" style="vertical-align: middle" th:text="${post.title}" maxlength="10" th:type="name"></td>
+                            <td class="td-news" style="vertical-align: middle" th:text="${post.title}"  width="30%" th:type="name"></td>
                             <td class="td-news text-capitalize" style="vertical-align: middle" th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}"></td>
-                            <td class="td-news" style="vertical-align: middle" th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" width="13%"></td>
-                            <td class="td-news" style="display: flex; justify-items: right; align-items: end; vertical-align: center">
-                                <form form-method="put" th:action="@{/admin/modify/} + ${post.postid}">
-                                    <button class="login-btn2"><a class="text-white">Edit</a></button>
-                                </form>
-                                <form form-method="delete" th:action="@{/admin/deletePost}">
-                                    <ul>
-                                        <li><input type="hidden" name="postid" th:value="${post.postid}"/></li>
-                                        <li><button class="login-btn2" style="margin-left: 10px"><a class="text-white">Delete</a></button></li>
-                                    </ul>
-                                </form>
+                            <td class="td-news" style="vertical-align: middle" th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}"></td>
+                            <td class="td-news" style="display: flex; vertical-align: middle;">
+                                    <form form-method="put" th:action="@{/admin/modify/} + ${post.postid}">
+                                        <button class="login-btn2"><a class="text-white">Edit post</a></button>
+                                    </form>
+                                    <form form-method="delete" th:action="@{/admin/deletePost}">
+                                        <ul>
+                                            <li><input type="hidden" name="postid" th:value="${post.postid}"/></li>
+                                            <li><button class="login-btn2" style="margin-left: 10px"><a class="text-white">Delete post</a></button></li>
+                                        </ul>
+                                    </form>
+                                    <form form-method="put" th:action="@{/admin/modifySection/} + ${post.postid}">
+                                        <button class="login-btn2" style="margin-left: 10px"><a class="text-white">Edit section</a></button>
+                                    </form>
+
                             </td>
                         </tr>
                         </tbody>

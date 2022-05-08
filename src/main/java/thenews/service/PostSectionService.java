@@ -9,5 +9,5 @@ import java.util.List;
 public interface PostSectionService {
     List<PostSection> findAll();
     boolean updatePostSection(Post post, Section section);
-    boolean updatePostSection(PostSection postSection);
+    public PostSection findByPostId(int postid);
 }

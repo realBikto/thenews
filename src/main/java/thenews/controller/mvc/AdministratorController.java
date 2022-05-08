@@ -9,10 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import thenews.components.SectionsComponent;
-import thenews.model.Category;
-import thenews.model.Post;
-import thenews.model.Section;
-import thenews.model.User;
+import thenews.model.*;
 import thenews.service.*;
 
 import java.util.List;
@@ -34,6 +31,9 @@ public class AdministratorController {
     private PostSectionService postSectionService;
 
     @Autowired
+    private SectionService sectionService;
+
+    @Autowired
     private IndexService indexService;
 
     @Autowired
@@ -42,17 +42,6 @@ public class AdministratorController {
     @GetMapping(path = {"/posts"})
     public ModelAndView getPostList() {
         ModelAndView modelAndView = new ModelAndView("post-management");
-        modelAndView.addObject("posts", this.postService.findAll());
-        modelAndView.addObject("categories", this.categoryService.getAllCategories());
-        return modelAndView;
-    }
-
-    @GetMapping(path = {"/sections"})
-    public ModelAndView getSectionsList() {
-        ModelAndView modelAndView = new ModelAndView("sections");
-        modelAndView.addObject("sections", this.sectionsComponent.getSections());
-        modelAndView.addObject("postSectionList", this.postSectionService.findAll());
-        modelAndView.addObject("postsWithoutSection", this.postService.postsWithoutSection());
         modelAndView.addObject("posts", this.postService.findAll());
         modelAndView.addObject("categories", this.categoryService.getAllCategories());
         return modelAndView;
@@ -82,9 +71,32 @@ public class AdministratorController {
         return "redirect:/admin/posts";
     }
 
-    @GetMapping("/modifySection")
-    public String updateSection(Post post, Section section) {
+    @GetMapping("/modifySection/{post}")
+    public ModelAndView updatePostSection(@PathVariable(required = true, name ="post") int id){
+        List<Category> categoryList = this.categoryService.getAllCategories();
+        List<Section> sectionList = this.sectionService.findAll();
+        Post post = this.postService.getPostById(id);
+        PostSection postSection = postSectionService.findByPostId(id);
+        if (postSection.getPostid() != null){
+            return new ModelAndView("update-post-section")
+                    .addObject("postSection", postSection)
+                    .addObject("post", post)
+                    .addObject("sections", sectionList)
+                    .addObject("categories", categoryList);
+        } else {
+            postSection.setPostid(id);
+            postSection.setSectionid(1);
+            return new ModelAndView("update-post-section")
+                    .addObject("postSection", postSection)
+                    .addObject("post", post)
+                    .addObject("sections", sectionList)
+                    .addObject("categories", categoryList);
+        }
+    }
+
+    @PostMapping("/modifySection")
+    public String updatePostSection(Post post, Section section) {
         postSectionService.updatePostSection(post, section);
-        return "redirect:/admin/sections";
+        return "redirect:/admin/posts";
     }
 }

@@ -3511,15 +3511,17 @@ div[data-role="editor-toolbar"] {
   font-weight: 300;
   line-height: 1.625em;
   position: relative;
+  text-align: center;
 
 }
 .td-news {
   color: #777777;
   font-family: "Quicksand", sans-serif;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.625em;
   vertical-align: middle;
+  text-align: center;
 }
 
 .grid-container {

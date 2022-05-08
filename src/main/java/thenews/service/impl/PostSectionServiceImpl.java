@@ -24,7 +24,14 @@ public class PostSectionServiceImpl implements PostSectionService {
     private PostDatabase postDatabase;
 
     @Override
-    public List<PostSection> findAll() {return postSectionDatabase.findAll();}
+    public List<PostSection> findAll() {
+        return postSectionDatabase.findAll();
+    }
+
+    @Override
+    public PostSection findByPostId(int postid) {
+        return postSectionDatabase.findByPostId(postid);
+    }
 
     @Override
     public boolean updatePostSection(Post post, Section section) {
@@ -33,12 +40,12 @@ public class PostSectionServiceImpl implements PostSectionService {
         postSection.setSectionid(section.getSectionid());
 
         try {
-            PostSection postsectionToEvaluate = postSectionDatabase.findByPostId((int) postSection.getPostid());
-            Section sectionToEvaluate = sectionDatabase.findById((int) postSection.getSectionid());
-            Post postToEvaluate = postDatabase.findById((int) postSection.getPostid());
+            PostSection postsectionToEvaluate = postSectionDatabase.findByPostId(postSection.getPostid());
+            Section sectionToEvaluate = sectionDatabase.findById(postSection.getSectionid());
+            Post postToEvaluate = postDatabase.findById(postSection.getPostid());
 
             if (postsectionToEvaluate != null && sectionToEvaluate != null && postToEvaluate != null) {
-                postSectionDatabase.deleteByPostId((int) postSection.getPostid());
+                postSectionDatabase.deleteByPostId(postSection.getPostid());
                 postSectionDatabase.save(postSection);
             }
             return true;
@@ -46,24 +53,5 @@ public class PostSectionServiceImpl implements PostSectionService {
             e.printStackTrace();
             return false;
         }
-    }
-
-    @Override
-    public boolean updatePostSection(PostSection postSection) {
-        try {
-            PostSection postsectionToEvaluate = postSectionDatabase.findByPostId((int) postSection.getPostid());
-            Section sectionToEvaluate = sectionDatabase.findById((int) postSection.getSectionid());
-            Post postToEvaluate = postDatabase.findById((int) postSection.getPostid());
-
-            if (postsectionToEvaluate != null && sectionToEvaluate != null && postToEvaluate != null) {
-                postSectionDatabase.deleteByPostId((int) postSection.getPostid());
-                postSectionDatabase.save(postSection);
-            }
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-
     }
 }

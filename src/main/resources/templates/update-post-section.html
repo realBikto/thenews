@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>TheNews</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <div th:replace="components/style.html"></div>
+
+</head>
+<body>
+<header>
+    <div th:replace="components/header.html"></div>
+</header>
+
+<div class="site-main-container">
+    <!-- Start top-post Area -->
+    <section class="top-post-area pt-10">
+        <div class="container no-padding">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hero-nav-area">
+                        <h1 class="text-white">Modify posts' section</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End top-post Area -->
+    <!-- Start contact-page Area -->
+    <section class="contact-page-area pt-50 pb-120">
+        <div class="container">
+            <div class="row contact-wrap">
+                <div class="col-lg-12">
+                    <table class="table">
+                        <thead class="thead-news">
+                        <tr>
+                            <th scope="col">Post ID</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Section</th>
+                            <th scope="col">Apply changes</th>
+                        </tr>
+                        </thead>
+                        <form th:action="@{/admin/modifySection}" method="post" th:object="${postSection}">
+                            <tbody>
+                            <tr>
+                                <th class="td-news" style="vertical-align: middle" scope="row" th:text="${post.postid}"></th>
+                                <td class="td-news" style="vertical-align: middle" th:text="${post.title}"  width="30%" th:type="name"></td>
+                                <td class="td-news text-capitalize" style="vertical-align: middle" th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}"></td>
+                                <td class="td-news" style="vertical-align: middle">
+                                    <select th:field="*{sectionid}" class="common-input form-control text-capitalize" style="text-align: center">
+                                        <option th:each="section : ${sections}" th:text="${section.name}" th:value="${section.sectionid}" th:selected="${postSection.sectionid == section.sectionid} ? true : false"></option>
+                                    </select>
+                                </td>
+                                <td class="td-news" style="vertical-align: middle">
+                                    <ul>
+                                        <li><input type="hidden" name="postid" th:value="${postSection.postid}"/></li>
+                                        <button class="login-btn2"  style="margin-left: 10px"><a class="text-white">Modify section</a></button>
+                                    </ul>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </form>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End contact-page Area -->
+</div>
+</body>
+</html>

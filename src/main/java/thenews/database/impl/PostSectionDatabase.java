@@ -68,8 +68,7 @@ public class PostSectionDatabase implements PostSectionDB {
             return jdbcTemplate.queryForObject("select * from news_core.post_section where postid = ?",
                     params, new PostSectionMapper());
         } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+            return new PostSection();
         }
 
     }

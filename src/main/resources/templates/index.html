@@ -40,7 +40,7 @@
                                     <h4 th:text="${post.title}" > </h4>
                                 </a>
                                 <ul class="meta">
-                                    <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                    <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}"  th:href="@{/user/} + ${user.userid}">username</a></li>
                                     <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">creation date</a></li>
                                 </ul>
                                 <p th:text="${post.subtitle}" class="excert"></p>
@@ -69,7 +69,7 @@
                                         <h4 th:text="${post.title}">title</h4>
                                     </a>
                                     <ul class="meta">
-                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}"  th:href="@{/user/} + ${user.userid}">username</a></li>
                                         <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">creation date</a></li>
                                     </ul>
                                     <p th:text="${post.subtitle}"class="excert">subtitle</p>
@@ -100,7 +100,7 @@
                                         <h4 th:text="${post.title}">title</h4>
                                     </a>
                                     <ul class="meta">
-                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}"  th:href="@{/user/} + ${user.userid}">username</a></li>
                                         <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">creation date</a></li>
                                     </ul>
                                     <p th:text="${post.subtitle}"class="excert">subtitle</p>
@@ -131,7 +131,7 @@
                                         <h4 th:text="${post.title}">title</h4>
                                     </a>
                                     <ul class="meta">
-                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}"  th:href="@{/user/} + ${user.userid}">username</a></li>
                                         <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">creation date</a></li>
                                     </ul>
                                     <p th:text="${post.subtitle}"class="excert">subtitle</p>
@@ -162,7 +162,7 @@
                                         <h4 th:text="${post.title}">title</h4>
                                     </a>
                                     <ul class="meta">
-                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" th:href="@{/user/} + ${user.userid}">username</a></li>
                                         <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">creation date</a></li>
                                     </ul>
                                     <p th:text="${post.subtitle}"class="excert">subtitle</p>
@@ -193,7 +193,7 @@
                                         <h4 th:text="${post.title}">title</h4>
                                     </a>
                                     <ul class="meta">
-                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}"  th:href="@{/user/} + ${user.userid}">username</a></li>
                                         <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">creation date</a></li>
                                     </ul>
                                     <p th:text="${post.subtitle}"class="excert">subtitle</p>
@@ -224,7 +224,7 @@
                                         <h4 th:text="${post.title}">title</h4>
                                     </a>
                                     <ul class="meta">
-                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                        <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}"  th:href="@{/user/} + ${user.userid}">username</a></li>
                                         <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">creation date</a></li>
                                     </ul>
                                     <p th:text="${post.subtitle}"class="excert">subtitle</p>

@@ -12,8 +12,7 @@ public interface PostService {
     boolean updatePost(Post object);
     boolean deleteById(int id);
     List<Post> findAll();
-    List<Post> postsWithoutSection();
     Post getPreviousPostInCategory(int categoryid, int postid);
     Post getNextPostInCategory(int categoryid, int postid);
-
+    List<Post> getPostsByUser(int userid);
 }

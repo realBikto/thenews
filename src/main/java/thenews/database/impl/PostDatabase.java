@@ -159,4 +159,9 @@ public class PostDatabase implements PostDB {
                 " inner join news_core.post p on p.postid = coalesce(x.next, x.postid)" +
                 " where x.postid = " + postid + ";", new PostMapper());
     }
+
+    @Override
+    public List<Post> getPostsByUser(int userid) {
+        return jdbcTemplate.query("select * from news_core.post where userid = " + userid + ";", new PostMapper());
+    }
 }

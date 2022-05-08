@@ -18,4 +18,5 @@ public interface PostDB extends BaseDB<Post>{
     public boolean updatePost(Post object);
     public Post getPreviousPostInCategory(int categoryid, int postid);
     public Post getNextPostInCategory(int categoryid, int postid);
+    public List<Post> getPostsByUser(int userid);
 }

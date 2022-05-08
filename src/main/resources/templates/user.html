@@ -22,8 +22,8 @@
                 <div class="col-lg-12 post-list">
                     <!-- Start latest-post Area -->
                     <div class="latest-post-wrap">
-                        <h4 class="cat-title text-capitalize" th:text="${category}"> All category posts </h4>
-                        <div th:each="post : ${postsByCategory}" class="single-latest-post row align-items-center">
+                        <h4 class="cat-title text-capitalize" th:text="'All ' + ${user.firstname} + ' ' + ${user.lastname} + ' posts'"> All user's posts </h4>
+                        <div th:each="post : ${postsByUser}" class="single-latest-post row align-items-center">
                             <div class="col-lg-5 post-left">
                                 <div class="feature-img relative">
                                     <div class="overlay overlay-bg"></div>
@@ -35,8 +35,8 @@
                                     <h4 th:text="${post.title}" > </h4>
                                 </a>
                                 <ul class="meta">
-                                    <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}"  th:href="@{/user/} + ${user.userid}">username</a></li>
-                                    <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" href="#">creation date</a></li>
+                                    <li><span class="lnr lnr-user"></span><a th:text="${user.firstname} + ' ' +${user.lastname}" href="#">username</a></li>
+                                    <li><span class="lnr lnr-calendar-full"></span><a th:text="${#dates.format(post.createdat, 'dd-MM-yyyy')}" th:href="@{/user/} + ${user.userid}">creation date</a></li>
                                 </ul>
                                 <p th:text="${post.subtitle}" class="excert"></p>
                             </div>

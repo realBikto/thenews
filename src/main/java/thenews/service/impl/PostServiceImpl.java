@@ -35,11 +35,11 @@ public class PostServiceImpl implements PostService {
     public List<Post> findAll() {return postDatabase.findAll();}
 
     @Override
-    public List<Post> postsWithoutSection() {return postDatabase.postsWithoutSection();}
-
-    @Override
     public Post getPreviousPostInCategory(int categoryid, int postid) {return postDatabase.getPreviousPostInCategory(categoryid, postid);}
 
     @Override
     public Post getNextPostInCategory(int categoryid, int postid) {return postDatabase.getNextPostInCategory(categoryid, postid);}
+
+    @Override
+    public List<Post> getPostsByUser(int userid) {return postDatabase.getPostsByUser(userid);}
 }

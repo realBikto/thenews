@@ -2,9 +2,9 @@ package thenews.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import thenews.database.impl.PostDatabase;
-import thenews.database.impl.PostSectionDatabase;
-import thenews.database.impl.SectionDatabase;
+import thenews.database.PostDB;
+import thenews.database.PostSectionDB;
+import thenews.database.SectionDB;
 import thenews.model.Post;
 import thenews.model.PostSection;
 import thenews.model.Section;
@@ -15,22 +15,22 @@ import java.util.List;
 @Service
 public class PostSectionServiceImpl implements PostSectionService {
     @Autowired
-    private PostSectionDatabase postSectionDatabase;
+    private PostSectionDB postSectionDB;
 
     @Autowired
-    private SectionDatabase sectionDatabase;
+    private SectionDB sectionDB;
 
     @Autowired
-    private PostDatabase postDatabase;
+    private PostDB postDB;
 
     @Override
     public List<PostSection> findAll() {
-        return postSectionDatabase.findAll();
+        return postSectionDB.findAll();
     }
 
     @Override
     public PostSection findByPostId(int postid) {
-        return postSectionDatabase.findByPostId(postid);
+        return postSectionDB.findByPostId(postid);
     }
 
     @Override
@@ -40,13 +40,13 @@ public class PostSectionServiceImpl implements PostSectionService {
         postSection.setSectionid(section.getSectionid());
 
         try {
-            PostSection postsectionToEvaluate = postSectionDatabase.findByPostId(postSection.getPostid());
-            Section sectionToEvaluate = sectionDatabase.findById(postSection.getSectionid());
-            Post postToEvaluate = postDatabase.findById(postSection.getPostid());
+            PostSection postsectionToEvaluate = postSectionDB.findByPostId(postSection.getPostid());
+            Section sectionToEvaluate = sectionDB.findById(postSection.getSectionid());
+            Post postToEvaluate = postDB.findById(postSection.getPostid());
 
             if (postsectionToEvaluate != null && sectionToEvaluate != null && postToEvaluate != null) {
-                postSectionDatabase.deleteByPostId(postSection.getPostid());
-                postSectionDatabase.save(postSection);
+                postSectionDB.deleteByPostId(postSection.getPostid());
+                postSectionDB.save(postSection);
             }
             return true;
         } catch (Exception e) {

@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PostService {
 
-    public boolean saveNewPost(Post post);
+    boolean saveNewPost(Post post);
     Post getPostById(int id);
     boolean update(int id, Post object);
     boolean updatePost(Post object);
@@ -15,4 +15,5 @@ public interface PostService {
     Post getPreviousPostInCategory(int categoryid, int postid);
     Post getNextPostInCategory(int categoryid, int postid);
     List<Post> getPostsByUser(int userid);
+    List<Post> getPostsByCategory(String category);
 }

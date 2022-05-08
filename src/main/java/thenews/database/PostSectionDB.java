@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface PostSectionDB extends BaseDB<PostSection>{
 
-    public PostSection findByPostId(int Id);
+    PostSection findByPostId(int Id);
     List<PostSection> findBySectionId(int Id);
-    public boolean deleteByPostId(int id);
+    boolean deleteByPostId(int id);
 
 }

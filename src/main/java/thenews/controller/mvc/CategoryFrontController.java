@@ -11,6 +11,9 @@ import thenews.database.CategoryDB;
 import thenews.database.PostDB;
 import thenews.database.UserDB;
 import thenews.model.User;
+import thenews.service.CategoryService;
+import thenews.service.PostService;
+import thenews.service.UserService;
 
 import java.util.List;
 
@@ -22,27 +25,27 @@ public class CategoryFrontController {
     private SectionsComponent sectionsComponent;
 
     @Autowired
-    private CategoryDB categoryDB;
+    private CategoryService categoryService;
 
     @Autowired
-    private UserDB userDB;
+    private UserService userService;
 
     @Autowired
-    private PostDB postDB;
+    private PostService postService;
 
     @GetMapping(path = {"/{category}"})
     public ModelAndView getCategory(@PathVariable(required = true, name ="category") String category) {
         ModelAndView modelAndView = new ModelAndView("category");
-        List<User> users = userDB.findAll();
+        List<User> users = userService.getAllUsers();
         modelAndView.addObject("users", users);
-        modelAndView.addObject("categories", this.categoryDB.findAll());
+        modelAndView.addObject("categories", this.categoryService.getAllCategories());
         modelAndView.addObject("sports", this.sectionsComponent.getSports());
         modelAndView.addObject("reports", this.sectionsComponent.getReports());
         modelAndView.addObject("opinion", this.sectionsComponent.getOpinion());
         modelAndView.addObject("international", this.sectionsComponent.getInternational());
         modelAndView.addObject("national", this.sectionsComponent.getNational());
         modelAndView.addObject("culture", this.sectionsComponent.getCulture());
-        modelAndView.addObject("postsByCategory", this.postDB.getPostsByCategory(category));
+        modelAndView.addObject("postsByCategory", this.postService.getPostsByCategory(category));
         return modelAndView;
     }
 }

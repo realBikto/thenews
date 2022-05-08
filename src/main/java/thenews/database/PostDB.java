@@ -6,17 +6,17 @@ import java.util.List;
 
 public interface PostDB extends BaseDB<Post>{
 
-    public List<Post> postsWithoutSection();
-    public List<Post> getLastNews();
-    public List<Post> getSports();
-    public List<Post> getReports();
-    public List<Post> getOpinion();
-    public List<Post> getInternational();
-    public List<Post> getNational();
-    public List<Post> getCulture();
-    public List<Post> getPostsByCategory(String category);
-    public boolean updatePost(Post object);
-    public Post getPreviousPostInCategory(int categoryid, int postid);
-    public Post getNextPostInCategory(int categoryid, int postid);
-    public List<Post> getPostsByUser(int userid);
+    List<Post> postsWithoutSection();
+    List<Post> getLastNews();
+    List<Post> getSports();
+    List<Post> getReports();
+    List<Post> getOpinion();
+    List<Post> getInternational();
+    List<Post> getNational();
+    List<Post> getCulture();
+    List<Post> getPostsByCategory(String category);
+    boolean updatePost(Post object);
+    Post getPreviousPostInCategory(int categoryid, int postid);
+    Post getNextPostInCategory(int categoryid, int postid);
+    List<Post> getPostsByUser(int userid);
 }

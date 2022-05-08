@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface SectionService {
 
-    public List<Section> findAll();
-    public Section findById(int id);
+    List<Section> findAll();
+    Section findById(int id);
 }

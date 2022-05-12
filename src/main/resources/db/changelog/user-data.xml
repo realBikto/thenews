@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <changeSet author="Víctor HM" id="1652215401359-1">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(1)
+        FROM user_table
+        WHERE username = 'admin@thenews.com';
+      </sqlCheck>
+    </preConditions>
+    <insert tableName="user_table">
+      <column name="firstname" value="System"/>
+      <column name="lastname" value="Administrator"/>
+      <column name="username" value="admin@thenews.com"/>
+      <column name="password" value="$2a$10$j2fDDyHsKdXROl1wsKDmueGYF2qOIUHgO5basYb8iu8H3Odpj5itC"/>
+      <column name="email" value="admin@thenews.com"/>
+      <column name="roleid" value="1"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-2">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(1)
+        FROM user_table
+        WHERE username = 'vherrera@thenews.com';
+      </sqlCheck>
+    </preConditions>
+    <insert tableName="user_table">
+      <column name="firstname" value="Victor"/>
+      <column name="lastname" value="Herrera"/>
+      <column name="username" value="vherrera@thenews.com"/>
+      <column name="password" value="$2a$10$4nuuFkN2.i1ZbUGxzqK5WuTjUUlIKBCj3E0mQTeWt74Eocch.vqJ2"/>
+      <column name="email" value="vherrera@thenews.com"/>
+      <column name="roleid" value="2"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>

@@ -18,7 +18,7 @@ public class PermissionDatabase implements PermissionDB {
     @Override
     public boolean save(Permission object) {
         try {
-            String sql = String.format("insert into news_core.permission (name) values ('%s');",
+            String sql = String.format("insert into public.permission (name) values ('%s');",
                     object.getName());
             jdbcTemplate.execute(sql);
             return true;
@@ -30,7 +30,7 @@ public class PermissionDatabase implements PermissionDB {
     @Override
     public boolean update(int id, Permission object) {
         if(id > 0) {
-            String sql = String.format("update news_core.permission set name = '%s' where permissionid = %d;",
+            String sql = String.format("update public.permission set name = '%s' where permissionid = %d;",
                     object.getName(), id);
             jdbcTemplate.execute(sql);
             return true;
@@ -40,19 +40,19 @@ public class PermissionDatabase implements PermissionDB {
 
     @Override
     public List<Permission> findAll() {
-        return jdbcTemplate.query("select * from news_core.permission;", new PermissionMapper());
+        return jdbcTemplate.query("select * from public.permission;", new PermissionMapper());
     }
 
     @Override
     public Permission findById(int id) {
-        return jdbcTemplate.queryForObject("select * from news_core.permission where permissionid = " + id + ";",
+        return jdbcTemplate.queryForObject("select * from public.permission where permissionid = " + id + ";",
                 new PermissionMapper());
     }
 
     @Override
     public boolean deleteById(int id){
         try{
-            String sql = String.format("delete from news_core.permission where permissionid = %d;", id);
+            String sql = String.format("delete from public.permission where permissionid = %d;", id);
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e){

@@ -18,7 +18,7 @@ public class SectionDatabase implements SectionDB {
     @Override
     public boolean save(Section object) {
         try {
-            String sql = String.format("insert into news_core.section (name) values ('%s')", object.getName());
+            String sql = String.format("insert into public.section (name) values ('%s')", object.getName());
             jdbcTemplate.execute(sql);
             return true;
         } catch (Exception e) {
@@ -29,7 +29,7 @@ public class SectionDatabase implements SectionDB {
     @Override
     public boolean update(int id, Section object) {
         if (id > 0) {
-            String sql = String.format("update news_core.section set name = '%s' where sectionid = %d", object.getName(), id);
+            String sql = String.format("update public.section set name = '%s' where sectionid = %d", object.getName(), id);
             jdbcTemplate.execute(sql);
             return true;
         }
@@ -38,13 +38,13 @@ public class SectionDatabase implements SectionDB {
 
     @Override
     public List<Section> findAll() {
-        return jdbcTemplate.query("select * from news_core.section", new SectionMapper());
+        return jdbcTemplate.query("select * from public.section", new SectionMapper());
     }
 
     @Override
     public Section findById(int id) {
         try {
-            return jdbcTemplate.queryForObject("select * from news_core.section where sectionid = " + id + "", new SectionMapper());
+            return jdbcTemplate.queryForObject("select * from public.section where sectionid = " + id + "", new SectionMapper());
         } catch (Exception e) {
             return null;
         }
@@ -53,7 +53,7 @@ public class SectionDatabase implements SectionDB {
     @Override
     public boolean deleteById(int id){
         try{
-            String sql = String.format("delete from news_core.section where sectionid = %d", id);
+            String sql = String.format("delete from public.section where sectionid = %d", id);
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e){

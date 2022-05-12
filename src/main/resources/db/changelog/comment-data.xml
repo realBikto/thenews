@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <changeSet author="Víctor HM" id="1652215401359-1">
+    <insert tableName="comment">
+      <column name="postid" value="60"/>
+      <column name="comment" value="This is my fifth comment."/>
+      <column name="username" value="email@email.com"/>
+      <column name="createdat" value="2022-04-29 10:21:15.510488 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-2">
+    <insert tableName="comment">
+      <column name="postid" value="60"/>
+      <column name="comment" value="Estamos de reunión."/>
+      <column name="username" value="email@email.com"/>
+      <column name="createdat" value="2022-04-29 13:11:05.955495 +00:00"/>
+    </insert>
+  </changeSet>
+
+</databaseChangeLog>

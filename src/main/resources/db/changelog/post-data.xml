@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <changeSet author="Víctor HM" id="1652215401359-1">
+    <insert tableName="post">
+      <column name="title" value="Title Sports News - 1"/>
+      <column name="subtitle" value="Subtitle Sports News - 1"/>
+      <column name="content" value="Content Sports News - 1"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="1"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-2">
+    <insert tableName="post">
+      <column name="title" value="Title Sports News - 2"/>
+      <column name="subtitle" value="Subtitle Sports News - 2"/>
+      <column name="content" value="Content Sports News - 2"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="1"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-3">
+    <insert tableName="post">
+      <column name="title" value="Title Sports News - 3"/>
+      <column name="subtitle" value="Subtitle Sports News - 3"/>
+      <column name="content" value="Content Sports News - 3"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="1"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-4">
+    <insert tableName="post">
+      <column name="title" value="Title Sports News - 4"/>
+      <column name="subtitle" value="Subtitle Sports News - 4"/>
+      <column name="content" value="Content Sports News - 4"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="1"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-5">
+    <insert tableName="post">
+      <column name="title" value="Title Sports News - 5"/>
+      <column name="subtitle" value="Subtitle Sports News - 5"/>
+      <column name="content" value="Content Sports News - 5"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="1"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-6">
+    <insert tableName="post">
+      <column name="title" value="Title Sports News - 6"/>
+      <column name="subtitle" value="Subtitle Sports News - 6"/>
+      <column name="content" value="Content Sports News - 6"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="1"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-7">
+    <insert tableName="post">
+      <column name="title" value="Title Sports News - 7"/>
+      <column name="subtitle" value="Subtitle Sports News - 7"/>
+      <column name="content" value="Content Sports News - 7"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="1"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-8">
+    <insert tableName="post">
+      <column name="title" value="Title Sports News - 8"/>
+      <column name="subtitle" value="Subtitle Sports News - 8"/>
+      <column name="content" value="Content Sports News - 8"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="1"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-9">
+    <insert tableName="post">
+      <column name="title" value="Title Sports News - 9"/>
+      <column name="subtitle" value="Subtitle Sports News - 9"/>
+      <column name="content" value="Content Sports News - 9"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="1"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-10">
+    <insert tableName="post">
+      <column name="title" value="Title Sports News - 10"/>
+      <column name="subtitle" value="Subtitle Sports News - 10"/>
+      <column name="content" value="Content Sports News - 10"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="1"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-11">
+    <insert tableName="post">
+      <column name="title" value="Title Opinion News - 11"/>
+      <column name="subtitle" value="Subtitle Opinion News - 11"/>
+      <column name="content" value="Content Opinion News - 11"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="1"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-12">
+    <insert tableName="post">
+      <column name="title" value="Title Opinion News - 2"/>
+      <column name="subtitle" value="Subtitle Opinion News - 2"/>
+      <column name="content" value="Content Opinion News - 2"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="3"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-13">
+    <insert tableName="post">
+      <column name="title" value="Title Opinion News - 3"/>
+      <column name="subtitle" value="Subtitle Opinion News - 3"/>
+      <column name="content" value="Content Opinion News - 3"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="3"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-14">
+    <insert tableName="post">
+      <column name="title" value="Title Opinion News - 4"/>
+      <column name="subtitle" value="Subtitle Opinion News - 4"/>
+      <column name="content" value="Content Opinion News - 4"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="3"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-15">
+    <insert tableName="post">
+      <column name="title" value="Title Opinion News - 5"/>
+      <column name="subtitle" value="Subtitle Opinion News - 5"/>
+      <column name="content" value="Content Opinion News - 5"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="3"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-16">
+    <insert tableName="post">
+      <column name="title" value="Title Opinion News - 6"/>
+      <column name="subtitle" value="Subtitle Opinion News - 6"/>
+      <column name="content" value="Content Opinion News - 6"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="3"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-17">
+    <insert tableName="post">
+      <column name="title" value="Title Opinion News - 7"/>
+      <column name="subtitle" value="Subtitle Opinion News - 7"/>
+      <column name="content" value="Content Opinion News - 7"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="3"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-18">
+    <insert tableName="post">
+      <column name="title" value="Title Opinion News - 8"/>
+      <column name="subtitle" value="Subtitle Opinion News - 8"/>
+      <column name="content" value="Content Opinion News - 8"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="1"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-19">
+    <insert tableName="post">
+      <column name="title" value="Title Opinion News - 9"/>
+      <column name="subtitle" value="Subtitle Opinion News - 9"/>
+      <column name="content" value="Content Opinion News - 9"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="3"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-20">
+    <insert tableName="post">
+      <column name="title" value="Title Opinion News - 10"/>
+      <column name="subtitle" value="Subtitle Opinion News - 10"/>
+      <column name="content" value="Content Opinion News - 10"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="3"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-21">
+    <insert tableName="post">
+      <column name="title" value="Title Reports News - 1"/>
+      <column name="subtitle" value="Subtitle Reports News - 1"/>
+      <column name="content" value="Content Reports News - 1"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="2"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-22">
+    <insert tableName="post">
+      <column name="title" value="Title Reports News - 2"/>
+      <column name="subtitle" value="Subtitle Reports News - 2"/>
+      <column name="content" value="Content Reports News - 2"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="2"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-23">
+    <insert tableName="post">
+      <column name="title" value="Title Reports News - 3"/>
+      <column name="subtitle" value="Subtitle Reports News - 3"/>
+      <column name="content" value="Content Reports News - 3"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="2"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-24">
+    <insert tableName="post">
+      <column name="title" value="Title Reports News - 4"/>
+      <column name="subtitle" value="Subtitle Reports News - 4"/>
+      <column name="content" value="Content Reports News - 4"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="2"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-25">
+    <insert tableName="post">
+      <column name="title" value="Title Reports News - 5"/>
+      <column name="subtitle" value="Subtitle Reports News - 5"/>
+      <column name="content" value="Content Reports News - 5"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="2"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-26">
+    <insert tableName="post">
+      <column name="title" value="Title Reports News - 6"/>
+      <column name="subtitle" value="Subtitle Reports News - 6"/>
+      <column name="content" value="Content Reports News - 6"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="2"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-27">
+    <insert tableName="post">
+      <column name="title" value="Title Reports News - 7"/>
+      <column name="subtitle" value="Subtitle Reports News - 7"/>
+      <column name="content" value="Content Reports News - 7"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="2"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-28">
+    <insert tableName="post">
+      <column name="title" value="Title Reports News - 8"/>
+      <column name="subtitle" value="Subtitle Reports News - 8"/>
+      <column name="content" value="Content Reports News - 8"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="2"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-29">
+    <insert tableName="post">
+      <column name="title" value="Title Reports News - 9"/>
+      <column name="subtitle" value="Subtitle Reports News - 9"/>
+      <column name="content" value="Content Reports News - 9"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="2"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-30">
+    <insert tableName="post">
+      <column name="title" value="Title Reports News - 10"/>
+      <column name="subtitle" value="Subtitle Reports News - 10"/>
+      <column name="content" value="Content Reports News - 10"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="2"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-31">
+    <insert tableName="post">
+      <column name="title" value="Title International News - 1"/>
+      <column name="subtitle" value="Subtitle International News - 1"/>
+      <column name="content" value="Content International News - 1"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="4"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-32">
+    <insert tableName="post">
+      <column name="title" value="Title International News - 2"/>
+      <column name="subtitle" value="Subtitle International News - 2"/>
+      <column name="content" value="Content International News - 2"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="4"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-33">
+    <insert tableName="post">
+      <column name="title" value="Title International News - 3"/>
+      <column name="subtitle" value="Subtitle International News - 3"/>
+      <column name="content" value="Content International News - 3"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="4"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-34">
+    <insert tableName="post">
+      <column name="title" value="Title International News - 4"/>
+      <column name="subtitle" value="Subtitle International News - 4"/>
+      <column name="content" value="Content International News - 4"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="4"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-35">
+    <insert tableName="post">
+      <column name="title" value="Title International News - 5"/>
+      <column name="subtitle" value="Subtitle International News - 5"/>
+      <column name="content" value="Content International News - 5"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="4"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-36">
+    <insert tableName="post">
+      <column name="title" value="Title International News - 6"/>
+      <column name="subtitle" value="Subtitle International News - 6"/>
+      <column name="content" value="Content International News - 6"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="4"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-37">
+    <insert tableName="post">
+      <column name="title" value="Title International News - 7"/>
+      <column name="subtitle" value="Subtitle International News - 7"/>
+      <column name="content" value="Content International News - 7"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="4"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-38">
+    <insert tableName="post">
+      <column name="title" value="Title International News - 8"/>
+      <column name="subtitle" value="Subtitle International News - 8"/>
+      <column name="content" value="Content International News - 8"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="4"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-39">
+    <insert tableName="post">
+      <column name="title" value="Title International News - 9"/>
+      <column name="subtitle" value="Subtitle International News - 9"/>
+      <column name="content" value="Content International News - 9"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="4"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-40">
+    <insert tableName="post">
+      <column name="title" value="Title International News - 10"/>
+      <column name="subtitle" value="Subtitle International News - 10"/>
+      <column name="content" value="Content International News - 10"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="4"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-41">
+    <insert tableName="post">
+      <column name="title" value="Title National News - 1"/>
+      <column name="subtitle" value="Subtitle National News - 1"/>
+      <column name="content" value="Content National News - 1"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="5"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-42">
+    <insert tableName="post">
+      <column name="title" value="Title National News - 2"/>
+      <column name="subtitle" value="Subtitle National News - 2"/>
+      <column name="content" value="Content National News - 2"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="5"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-43">
+    <insert tableName="post">
+      <column name="title" value="Title National News - 3"/>
+      <column name="subtitle" value="Subtitle National News - 3"/>
+      <column name="content" value="Content National News - 3"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="5"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-44">
+    <insert tableName="post">
+      <column name="title" value="Title National News - 4"/>
+      <column name="subtitle" value="Subtitle National News - 4"/>
+      <column name="content" value="Content National News - 4"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="5"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-45">
+    <insert tableName="post">
+      <column name="title" value="Title National News - 5"/>
+      <column name="subtitle" value="Subtitle National News - 5"/>
+      <column name="content" value="Content National News - 5"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="5"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-46">
+    <insert tableName="post">
+      <column name="title" value="Title National News - 6"/>
+      <column name="subtitle" value="Subtitle National News - 6"/>
+      <column name="content" value="Content National News - 6"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="5"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-47">
+    <insert tableName="post">
+      <column name="title" value="Title National News - 7"/>
+      <column name="subtitle" value="Subtitle National News - 7"/>
+      <column name="content" value="Content National News - 7"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="5"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-48">
+    <insert tableName="post">
+      <column name="title" value="Title National News - 8"/>
+      <column name="subtitle" value="Subtitle National News - 8"/>
+      <column name="content" value="Content National News - 8"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="5"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-49">
+    <insert tableName="post">
+      <column name="title" value="Title National News - 9"/>
+      <column name="subtitle" value="Subtitle National News - 9"/>
+      <column name="content" value="Content National News - 9"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="5"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-50">
+    <insert tableName="post">
+      <column name="title" value="Title National News - 10"/>
+      <column name="subtitle" value="Subtitle National News - 10"/>
+      <column name="content" value="Content National News - 10"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="5"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-51">
+    <insert tableName="post">
+      <column name="title" value="Title Culture News - 1"/>
+      <column name="subtitle" value="Subtitle Culture News - 1"/>
+      <column name="content" value="Content Culture News - 1"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="6"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-52">
+    <insert tableName="post">
+      <column name="title" value="Title Culture News - 2"/>
+      <column name="subtitle" value="Subtitle Culture News - 2"/>
+      <column name="content" value="Content Culture News - 2"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="6"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-53">
+    <insert tableName="post">
+      <column name="title" value="Title Culture News - 3"/>
+      <column name="subtitle" value="Subtitle Culture News - 3"/>
+      <column name="content" value="Content Culture News - 3"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="6"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-54">
+    <insert tableName="post">
+      <column name="title" value="Title Culture News - 4"/>
+      <column name="subtitle" value="Subtitle Culture News - 4"/>
+      <column name="content" value="Content Culture News - 4"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="6"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-55">
+    <insert tableName="post">
+      <column name="title" value="Title Culture News - 5"/>
+      <column name="subtitle" value="Subtitle Culture News - 5"/>
+      <column name="content" value="Content Culture News - 5"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="6"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-56">
+    <insert tableName="post">
+      <column name="title" value="Title Culture News - 6"/>
+      <column name="subtitle" value="Subtitle Culture News - 6"/>
+      <column name="content" value="Content Culture News - 6"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="6"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-57">
+    <insert tableName="post">
+      <column name="title" value="Title Culture News - 7"/>
+      <column name="subtitle" value="Subtitle Culture News - 7"/>
+      <column name="content" value="Content Culture News - 7"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="6"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-58">
+    <insert tableName="post">
+      <column name="title" value="Title Culture News - 8"/>
+      <column name="subtitle" value="Subtitle Culture News - 8"/>
+      <column name="content" value="Content Culture News - 8"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="6"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-59">
+    <insert tableName="post">
+      <column name="title" value="Title Culture News - 9"/>
+      <column name="subtitle" value="Subtitle Culture News - 9"/>
+      <column name="content" value="Content Culture News - 9"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="6"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-60">
+    <insert tableName="post">
+      <column name="title" value="Title Culture News - 10"/>
+      <column name="subtitle" value="Subtitle Culture News - 10"/>
+      <column name="content" value="Content Culture News - 10"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="6"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-61">
+    <insert tableName="post">
+      <column name="title" value="Title International News - 11"/>
+      <column name="subtitle" value="Subtitle International News - 11"/>
+      <column name="content" value="Content International News - 11"/>
+      <column name="userid" value="2"/>
+      <column name="image" value="https://ih1.redbubble.net/image.1931311563.3596/st,small,507x507-pad,600x600,f8f8f8.jpg"/>
+      <column name="categoryid" value="4"/>
+      <column name="createdat" value="2022-04-19 18:56:04.611204 +00:00"/>
+    </insert>
+  </changeSet>
+
+</databaseChangeLog>

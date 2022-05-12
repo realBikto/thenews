@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <changeSet author="Víctor HM" id="1652215401359-1">
+    <insert tableName="post_section">
+      <column name="postid" value="1"/>
+      <column name="sectionid" value="1"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-2">
+    <insert tableName="post_section">
+      <column name="postid" value="2"/>
+      <column name="sectionid" value="1"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-3">
+    <insert tableName="post_section">
+      <column name="postid" value="3"/>
+      <column name="sectionid" value="1"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-4">
+    <insert tableName="post_section">
+      <column name="postid" value="4"/>
+      <column name="sectionid" value="1"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-5">
+    <insert tableName="post_section">
+      <column name="postid" value="5"/>
+      <column name="sectionid" value="1"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-6">
+    <insert tableName="post_section">
+      <column name="postid" value="6"/>
+      <column name="sectionid" value="1"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-7">
+    <insert tableName="post_section">
+      <column name="postid" value="7"/>
+      <column name="sectionid" value="1"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-8">
+    <insert tableName="post_section">
+      <column name="postid" value="8"/>
+      <column name="sectionid" value="1"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-9">
+    <insert tableName="post_section">
+      <column name="postid" value="9"/>
+      <column name="sectionid" value="1"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-10">
+    <insert tableName="post_section">
+      <column name="postid" value="10"/>
+      <column name="sectionid" value="1"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-11">
+    <insert tableName="post_section">
+      <column name="postid" value="11"/>
+      <column name="sectionid" value="3"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-12">
+    <insert tableName="post_section">
+      <column name="postid" value="12"/>
+      <column name="sectionid" value="3"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-13">
+    <insert tableName="post_section">
+      <column name="postid" value="13"/>
+      <column name="sectionid" value="3"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-14">
+    <insert tableName="post_section">
+      <column name="postid" value="14"/>
+      <column name="sectionid" value="3"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-15">
+    <insert tableName="post_section">
+      <column name="postid" value="15"/>
+      <column name="sectionid" value="3"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-16">
+    <insert tableName="post_section">
+      <column name="postid" value="16"/>
+      <column name="sectionid" value="3"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-17">
+    <insert tableName="post_section">
+      <column name="postid" value="17"/>
+      <column name="sectionid" value="3"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-18">
+    <insert tableName="post_section">
+      <column name="postid" value="18"/>
+      <column name="sectionid" value="3"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-19">
+    <insert tableName="post_section">
+      <column name="postid" value="19"/>
+      <column name="sectionid" value="3"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-20">
+    <insert tableName="post_section">
+      <column name="postid" value="20"/>
+      <column name="sectionid" value="3"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-21">
+    <insert tableName="post_section">
+      <column name="postid" value="21"/>
+      <column name="sectionid" value="2"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-22">
+    <insert tableName="post_section">
+      <column name="postid" value="22"/>
+      <column name="sectionid" value="2"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-23">
+    <insert tableName="post_section">
+      <column name="postid" value="23"/>
+      <column name="sectionid" value="2"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-24">
+    <insert tableName="post_section">
+      <column name="postid" value="24"/>
+      <column name="sectionid" value="2"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-25">
+    <insert tableName="post_section">
+      <column name="postid" value="25"/>
+      <column name="sectionid" value="2"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-26">
+    <insert tableName="post_section">
+      <column name="postid" value="26"/>
+      <column name="sectionid" value="2"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-27">
+    <insert tableName="post_section">
+      <column name="postid" value="27"/>
+      <column name="sectionid" value="2"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-28">
+    <insert tableName="post_section">
+      <column name="postid" value="28"/>
+      <column name="sectionid" value="2"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-29">
+    <insert tableName="post_section">
+      <column name="postid" value="29"/>
+      <column name="sectionid" value="2"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-30">
+    <insert tableName="post_section">
+      <column name="postid" value="30"/>
+      <column name="sectionid" value="2"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-31">
+    <insert tableName="post_section">
+      <column name="postid" value="31"/>
+      <column name="sectionid" value="4"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-32">
+    <insert tableName="post_section">
+      <column name="postid" value="32"/>
+      <column name="sectionid" value="4"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-33">
+    <insert tableName="post_section">
+      <column name="postid" value="33"/>
+      <column name="sectionid" value="4"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-34">
+    <insert tableName="post_section">
+      <column name="postid" value="34"/>
+      <column name="sectionid" value="4"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-35">
+    <insert tableName="post_section">
+      <column name="postid" value="35"/>
+      <column name="sectionid" value="4"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-36">
+    <insert tableName="post_section">
+      <column name="postid" value="36"/>
+      <column name="sectionid" value="4"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-37">
+    <insert tableName="post_section">
+      <column name="postid" value="37"/>
+      <column name="sectionid" value="4"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-38">
+    <insert tableName="post_section">
+      <column name="postid" value="38"/>
+      <column name="sectionid" value="4"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-39">
+    <insert tableName="post_section">
+      <column name="postid" value="39"/>
+      <column name="sectionid" value="4"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-40">
+    <insert tableName="post_section">
+      <column name="postid" value="40"/>
+      <column name="sectionid" value="4"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-41">
+    <insert tableName="post_section">
+      <column name="postid" value="41"/>
+      <column name="sectionid" value="5"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-42">
+    <insert tableName="post_section">
+      <column name="postid" value="42"/>
+      <column name="sectionid" value="5"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-43">
+    <insert tableName="post_section">
+      <column name="postid" value="43"/>
+      <column name="sectionid" value="5"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-44">
+    <insert tableName="post_section">
+      <column name="postid" value="44"/>
+      <column name="sectionid" value="5"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-45">
+    <insert tableName="post_section">
+      <column name="postid" value="45"/>
+      <column name="sectionid" value="5"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-46">
+    <insert tableName="post_section">
+      <column name="postid" value="46"/>
+      <column name="sectionid" value="5"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-47">
+    <insert tableName="post_section">
+      <column name="postid" value="47"/>
+      <column name="sectionid" value="5"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-48">
+    <insert tableName="post_section">
+      <column name="postid" value="48"/>
+      <column name="sectionid" value="5"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-49">
+    <insert tableName="post_section">
+      <column name="postid" value="49"/>
+      <column name="sectionid" value="5"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-50">
+    <insert tableName="post_section">
+      <column name="postid" value="50"/>
+      <column name="sectionid" value="5"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-51">
+    <insert tableName="post_section">
+      <column name="postid" value="51"/>
+      <column name="sectionid" value="6"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-52">
+    <insert tableName="post_section">
+      <column name="postid" value="52"/>
+      <column name="sectionid" value="6"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-53">
+    <insert tableName="post_section">
+      <column name="postid" value="53"/>
+      <column name="sectionid" value="6"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-54">
+    <insert tableName="post_section">
+      <column name="postid" value="54"/>
+      <column name="sectionid" value="6"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-55">
+    <insert tableName="post_section">
+      <column name="postid" value="55"/>
+      <column name="sectionid" value="6"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-56">
+    <insert tableName="post_section">
+      <column name="postid" value="56"/>
+      <column name="sectionid" value="6"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-57">
+    <insert tableName="post_section">
+      <column name="postid" value="57"/>
+      <column name="sectionid" value="6"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-58">
+    <insert tableName="post_section">
+      <column name="postid" value="58"/>
+      <column name="sectionid" value="6"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-59">
+    <insert tableName="post_section">
+      <column name="postid" value="59"/>
+      <column name="sectionid" value="6"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-60">
+    <insert tableName="post_section">
+      <column name="postid" value="60"/>
+      <column name="sectionid" value="6"/>
+    </insert>
+  </changeSet>
+
+</databaseChangeLog>

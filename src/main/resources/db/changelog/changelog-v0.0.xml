@@ -1,0 +1,122 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="1652215401359-1" author="Víctor HM">
+        <createTable tableName="role">
+            <column name="roleid" autoIncrement="true" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1652215401359-2" author="Víctor HM">
+        <createTable tableName="user_table">
+            <column name="userid" autoIncrement="true" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="firstname" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastname" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="username" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="roleid" type="int">
+                <constraints foreignKeyName="fk_role_user" nullable="false" referencedColumnNames="roleid" referencedTableName="role"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1652215401359-3" author="Víctor HM">
+        <createTable tableName="category">
+            <column name="categoryid" autoIncrement="true" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="createdat" type="java.sql.types.timestamp_with_timezone">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1652215401359-4" author="Víctor HM">
+        <createTable tableName="section">
+            <column name="sectionid" autoIncrement="true" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1652215401359-5" author="Víctor HM">
+        <createTable tableName="post">
+            <column name="postid" autoIncrement="true" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="title" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="subtitle" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="content" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="userid" type="int">
+                <constraints foreignKeyName="fk_post_user" nullable="false" referencedColumnNames="userid" referencedTableName="user_table"/>
+            </column>
+            <column name="image" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="categoryid" type="int">
+                <constraints foreignKeyName="fk_post_category" nullable="false" referencedColumnNames="categoryid" referencedTableName="category"/>
+            </column>
+            <column name="createdat" type="java.sql.Types.TIMESTAMP_WITH_TIMEZONE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1652215401359-6" author="Víctor HM">
+        <createTable tableName="comment">
+            <column name="commentid" autoIncrement="true" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="postid" type="int">
+                <constraints foreignKeyName="fk_comment_post" nullable="false" referencedColumnNames="postid" referencedTableName="post"/>
+            </column>
+            <column name="comment" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="username" type="varchar(50)">
+                <constraints nullable="false"/>
+<!--                <constraints foreignKeyName="fk_comment_user" nullable="false" referencedColumnNames="username" referencedTableName="user_table"/>-->
+            </column>
+            <column name="createdat" type="java.sql.Types.TIMESTAMP_WITH_TIMEZONE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1652215401359-7" author="Víctor HM">
+        <createTable tableName="post_section">
+            <column name="postsectionid" autoIncrement="true" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="postid" type="int">
+                <constraints foreignKeyName="fk_postsection_post" nullable="false" referencedColumnNames="postid" referencedTableName="post"/>
+            </column>
+            <column name="sectionid" type="int">
+                <constraints foreignKeyName="fk_postsection_section" nullable="false" referencedColumnNames="sectionid" referencedTableName="section"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

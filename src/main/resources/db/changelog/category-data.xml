@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <changeSet author="Víctor HM" id="1652215401359-1">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(1)
+        FROM category
+        WHERE name = 'sports';
+      </sqlCheck>
+    </preConditions>
+    <insert tableName="category">
+      <column name="categoryid" value="1"/>
+      <column name="name" value="sports"/>
+      <column name="createdat" value="2022-04-13 21:26:15.803403 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-2">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(1)
+        FROM category
+        WHERE name = 'reports';
+      </sqlCheck>
+    </preConditions>
+    <insert tableName="category">
+      <column name="categoryid" value="2"/>
+      <column name="name" value="reports"/>
+      <column name="createdat" value="2022-04-13 21:26:15.803403 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-3">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(1)
+        FROM category
+        WHERE name = 'opinion';
+      </sqlCheck>
+    </preConditions>
+    <insert tableName="category">
+      <column name="categoryid" value="3"/>
+      <column name="name" value="opinion"/>
+      <column name="createdat" value="2022-04-13 21:26:15.803403 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-4">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(1)
+        FROM category
+        WHERE name = 'international';
+      </sqlCheck>
+    </preConditions>
+    <insert tableName="category">
+      <column name="categoryid" value="4"/>
+      <column name="name" value="international"/>
+      <column name="createdat" value="2022-04-13 21:26:15.803403 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-5">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(1)
+        FROM category
+        WHERE name = 'national';
+      </sqlCheck>
+    </preConditions>
+    <insert tableName="category">
+      <column name="categoryid" value="5"/>
+      <column name="name" value="national"/>
+      <column name="createdat" value="2022-04-13 21:26:15.803403 +00:00"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-6">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(1)
+        FROM category
+        WHERE name = 'culture';
+      </sqlCheck>
+    </preConditions>
+    <insert tableName="category">
+      <column name="categoryid" value="6"/>
+      <column name="name" value="culture"/>
+      <column name="createdat" value="2022-04-13 21:26:15.803403 +00:00"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>

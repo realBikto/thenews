@@ -18,7 +18,7 @@ public class RolePermissionDatabase implements RolePermissionDB {
     @Override
     public boolean save(RolePermission object) {
         try {
-            String sql = String.format("insert into news_core.role_permission (roleid, permissionid) values (%d, %d);",
+            String sql = String.format("insert into public.role_permission (roleid, permissionid) values (%d, %d);",
                     object.getRoleid(), object.getPermissionid());
             jdbcTemplate.execute(sql);
             return true;
@@ -30,7 +30,7 @@ public class RolePermissionDatabase implements RolePermissionDB {
     @Override
     public boolean update(int id, RolePermission object) {
         if(object.getRoleid() > 0) {
-            String sql = String.format("update news_core.role_permission set permissionid = %d where roleid = %d;",
+            String sql = String.format("update public.role_permission set permissionid = %d where roleid = %d;",
                     object.getPermissionid(), object.getRoleid());
             jdbcTemplate.execute(sql);
         }return false;
@@ -38,19 +38,19 @@ public class RolePermissionDatabase implements RolePermissionDB {
 
     @Override
     public List<RolePermission> findAll() {
-        return jdbcTemplate.query("select * from news_core.role_permission;", new RolePermissionMapper());
+        return jdbcTemplate.query("select * from public.role_permission;", new RolePermissionMapper());
     }
 
     @Override
     public RolePermission findById(int id) {
-        return jdbcTemplate.queryForObject("select * from news_core.role_permission where rolepermissionid = " + id + ";",
+        return jdbcTemplate.queryForObject("select * from public.role_permission where rolepermissionid = " + id + ";",
                  new RolePermissionMapper());
     }
 
     @Override
     public boolean deleteById(int permissionid){
         try{
-            String sql = String.format("delete from news_core.role_permission where permissionid = %d;", permissionid);
+            String sql = String.format("delete from public.role_permission where permissionid = %d;", permissionid);
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e){

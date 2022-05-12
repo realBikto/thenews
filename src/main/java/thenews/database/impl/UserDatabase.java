@@ -21,7 +21,7 @@ public class UserDatabase implements UserDB {
     @Override
     public User save(User object) {
         try {
-            String sql = String.format("insert into news_core.user_table (firstname, lastname, username, password, email, roleid)" +
+            String sql = String.format("insert into public.user_table (firstname, lastname, username, password, email, roleid)" +
                             " values ('%s','%s','%s','%s','%s',%d);", object.getFirstname(), object.getLastname(),
                     object.getEmail(), bCryptPasswordEncoder.encode(object.getPassword()), object.getEmail(), object.getRoleid());
             jdbcTemplate.execute(sql);
@@ -34,7 +34,7 @@ public class UserDatabase implements UserDB {
     @Override
     public User update(int id, User object) {
         try {
-            String sql = String.format("update news_core.user_table set firstname = '%s', lastname = '%s', username = '%s', " +
+            String sql = String.format("update public.user_table set firstname = '%s', lastname = '%s', username = '%s', " +
                             "password = '%s', email = '%s', roleid = %d where userid = %d;", object.getFirstname(),
                     object.getLastname(), object.getEmail(), bCryptPasswordEncoder.encode(object.getPassword()),
                     object.getEmail(), object.getRoleid(), id);
@@ -47,18 +47,18 @@ public class UserDatabase implements UserDB {
 
     @Override
     public List<User> findAll() {
-        return jdbcTemplate.query("select * from news_core.user_table;", new UserMapper());
+        return jdbcTemplate.query("select * from public.user_table;", new UserMapper());
     }
 
     @Override
     public User findById(int id) {
-        return jdbcTemplate.queryForObject("select * from news_core.user_table where userid = " + id + ";", new UserMapper());
+        return jdbcTemplate.queryForObject("select * from public.user_table where userid = " + id + ";", new UserMapper());
     }
 
     @Override
     public boolean deleteById(int id) {
         try{
-            String sql = String.format("delete from news_core.user_table where userid = %d;", id);
+            String sql = String.format("delete from public.user_table where userid = %d;", id);
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e){
@@ -68,7 +68,7 @@ public class UserDatabase implements UserDB {
 
     @Override
     public User findByEmail(String email) {
-        return jdbcTemplate.queryForObject("select * from news_core.user_table where email = " + email + ";",
+        return jdbcTemplate.queryForObject("select * from public.user_table where email = '" + email + "';",
                 new UserMapper());
     }
 }

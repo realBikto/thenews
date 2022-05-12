@@ -18,7 +18,7 @@ public class CategoryDatabase implements CategoryDB {
     @Override
     public Category save(Category object) {
         try {
-            String sql = String.format("insert into news_core.category (name, createdat)" +
+            String sql = String.format("insert into public.category (name, createdat)" +
                             " values ('%s','%s');", object.getName(), object.getCreatedat());
             jdbcTemplate.execute(sql);
             return findByName(object.getName());
@@ -30,7 +30,7 @@ public class CategoryDatabase implements CategoryDB {
     @Override
     public Category update(int id, Category object) {
         try {
-            String sql = String.format("update news_core.category set name = '%s', createdat = '%s'" +
+            String sql = String.format("update public.category set name = '%s', createdat = '%s'" +
                             " where categoryid = %d;", object.getName(), object.getCreatedat(), id);
             jdbcTemplate.execute(sql);
             return findById(object.getCategoryid());
@@ -41,18 +41,18 @@ public class CategoryDatabase implements CategoryDB {
 
     @Override
     public List<Category> findAll() {
-        return jdbcTemplate.query("select * from news_core.category;", new CategoryMapper());
+        return jdbcTemplate.query("select * from public.category;", new CategoryMapper());
     }
 
     @Override
     public Category findById(int id) {
-        return jdbcTemplate.queryForObject("select * from news_core.category where categoryid = " + id + ";", new CategoryMapper());
+        return jdbcTemplate.queryForObject("select * from public.category where categoryid = " + id + ";", new CategoryMapper());
     }
 
     @Override
     public boolean deleteById(int id) {
         try{
-            String sql = String.format("delete from news_core.category where categoryid = %d;", id);
+            String sql = String.format("delete from public.category where categoryid = %d;", id);
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e){
@@ -62,6 +62,6 @@ public class CategoryDatabase implements CategoryDB {
 
     @Override
     public Category findByName(String name) {
-        return jdbcTemplate.queryForObject("select * from news_core.category where name = '" + name + "';", new CategoryMapper());
+        return jdbcTemplate.queryForObject("select * from public.category where name = '" + name + "';", new CategoryMapper());
     }
 }

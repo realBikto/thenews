@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <changeSet author="Víctor HM" id="1652215401359-1">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(1)
+        FROM section
+        WHERE name = 'sports';
+      </sqlCheck>
+    </preConditions>
+    <insert tableName="section">
+      <column name="sectionid" value="1"/>
+      <column name="name" value="sports"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-2">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(1)
+        FROM section
+        WHERE name = 'reports';
+      </sqlCheck>
+    </preConditions>
+    <insert tableName="section">
+      <column name="sectionid" value="2"/>
+      <column name="name" value="reports"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-3">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(1)
+        FROM section
+        WHERE name = 'opinion';
+      </sqlCheck>
+    </preConditions>
+    <insert tableName="section">
+      <column name="sectionid" value="3"/>
+      <column name="name" value="opinion"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-4">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(1)
+        FROM section
+        WHERE name = 'international';
+      </sqlCheck>
+    </preConditions>
+    <insert tableName="section">
+      <column name="sectionid" value="4"/>
+      <column name="name" value="international"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-5">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(1)
+        FROM section
+        WHERE name = 'national';
+      </sqlCheck>
+    </preConditions>
+    <insert tableName="section">
+      <column name="sectionid" value="5"/>
+      <column name="name" value="national"/>
+    </insert>
+  </changeSet>
+
+  <changeSet author="Víctor HM" id="1652215401359-6">
+    <preConditions onFail="MARK_RAN">
+      <sqlCheck expectedResult="0">
+        SELECT COUNT(1)
+        FROM section
+        WHERE name = 'culture';
+      </sqlCheck>
+    </preConditions>
+    <insert tableName="section">
+      <column name="sectionid" value="6"/>
+      <column name="name" value="culture"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>

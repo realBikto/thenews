@@ -18,7 +18,7 @@ public class PostSectionDatabase implements PostSectionDB {
     @Override
     public boolean save(PostSection object) {
         try {
-            String sql = String.format("insert into news_core.post_section (postid, sectionid) values (%d, %d)", object.getPostid(), object.getSectionid());
+            String sql = String.format("insert into public.post_section (postid, sectionid) values (%d, %d)", object.getPostid(), object.getSectionid());
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e) {
@@ -29,7 +29,7 @@ public class PostSectionDatabase implements PostSectionDB {
     @Override
     public boolean update(int id, PostSection object) {
         if(id > 0) {
-            String sql = String.format("update news_core.post_section set sectionid = %d where postid = %d",
+            String sql = String.format("update public.post_section set sectionid = %d where postid = %d",
                     object.getSectionid(), id);
             jdbcTemplate.execute(sql);
         }
@@ -38,19 +38,19 @@ public class PostSectionDatabase implements PostSectionDB {
 
     @Override
     public List<PostSection> findAll() {
-        return jdbcTemplate.query("select * from news_core.post_section;", new PostSectionMapper());
+        return jdbcTemplate.query("select * from public.post_section;", new PostSectionMapper());
     }
 
     @Override
     public PostSection findById(int id) {
-        return jdbcTemplate.queryForObject("select * from news_core.post_section where postsectionid = " + id + ";",
+        return jdbcTemplate.queryForObject("select * from public.post_section where postsectionid = " + id + ";",
                 new PostSectionMapper());
     }
 
     @Override
     public boolean deleteById(int id) {
         try{
-            String sql = String.format("delete from news_core.post_section where postsectionid = %d;", id);
+            String sql = String.format("delete from public.post_section where postsectionid = %d;", id);
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e){
@@ -61,7 +61,7 @@ public class PostSectionDatabase implements PostSectionDB {
     @Override
     public PostSection findByPostId(int id) {
         try {
-            return jdbcTemplate.queryForObject("select * from news_core.post_section where postid = " + id + ";",
+            return jdbcTemplate.queryForObject("select * from public.post_section where postid = " + id + ";",
                     new PostSectionMapper());
         } catch (Exception e) {
             return new PostSection();
@@ -72,7 +72,7 @@ public class PostSectionDatabase implements PostSectionDB {
     @Override
     public List<PostSection> findBySectionId(int id) {
         try {
-            return jdbcTemplate.query("select * from news_core.post_section where sectionid = " + id + ";",
+            return jdbcTemplate.query("select * from public.post_section where sectionid = " + id + ";",
                      new PostSectionMapper());
         } catch (Exception e) {
             return null;
@@ -83,7 +83,7 @@ public class PostSectionDatabase implements PostSectionDB {
     @Override
     public boolean deleteByPostId(int id) {
         try{
-            String sql = String.format("delete from news_core.post_section where postid = %d", id);
+            String sql = String.format("delete from public.post_section where postid = %d", id);
             jdbcTemplate.execute(sql);
             return true;
         }catch (Exception e){

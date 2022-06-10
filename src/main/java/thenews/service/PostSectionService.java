@@ -10,4 +10,5 @@ public interface PostSectionService {
     List<PostSection> findAll();
     boolean updatePostSection(Post post, Section section);
     PostSection findByPostId(int postid);
+    boolean deleteByPostId(int postid);
 }

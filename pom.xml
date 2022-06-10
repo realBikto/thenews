@@ -72,6 +72,40 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<!-- Prepare a docker and publish it -->
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.39.1</version>
+
+				<configuration>
+					<images>
+						<image>
+							<name>thenews</name>
+							<build>
+								<from>openjdk:8-alpine</from>
+								<assembly>
+									<basedir>/</basedir>
+									<inline>
+										<!-- Assembly specifying Dockerbuild for fabric8/docker-maven-plugin -->
+										<fileSets>
+											<!-- Copy JAR from target -->
+											<fileSet>
+												<directory>target</directory>
+												<outputDirectory>/</outputDirectory>
+												<includes>
+													<include>thenews-0.0.1-SNAPSHOT.jar</include>
+												</includes>
+											</fileSet>
+										</fileSets>
+									</inline>
+								</assembly>
+								<cmd>java -Duser.timezone=UTC -Dhibernate.types.print.banner=false -Djava.security.egd=file:/dev/./urandom -jar /thenews-0.0.1-SNAPSHOT.jar</cmd>
+							</build>
+						</image>
+					</images>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 

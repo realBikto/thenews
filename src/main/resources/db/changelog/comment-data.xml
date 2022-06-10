@@ -4,7 +4,7 @@
   <changeSet author="Víctor HM" id="1652215401359-1">
     <insert tableName="comment">
       <column name="postid" value="60"/>
-      <column name="comment" value="This is my fifth comment."/>
+      <column name="comment" value="This is my first comment."/>
       <column name="username" value="email@email.com"/>
       <column name="createdat" value="2022-04-29 10:21:15.510488 +00:00"/>
     </insert>
@@ -13,7 +13,7 @@
   <changeSet author="Víctor HM" id="1652215401359-2">
     <insert tableName="comment">
       <column name="postid" value="60"/>
-      <column name="comment" value="Estamos de reunión."/>
+      <column name="comment" value="We are in a meet."/>
       <column name="username" value="email@email.com"/>
       <column name="createdat" value="2022-04-29 13:11:05.955495 +00:00"/>
     </insert>

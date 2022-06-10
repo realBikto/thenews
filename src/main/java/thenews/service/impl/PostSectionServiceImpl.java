@@ -34,6 +34,11 @@ public class PostSectionServiceImpl implements PostSectionService {
     }
 
     @Override
+    public boolean deleteByPostId(int postid) {
+        return postSectionDB.deleteByPostId(postid);
+    }
+
+    @Override
     public boolean updatePostSection(Post post, Section section) {
         PostSection postSection = new PostSection();
         postSection.setPostid(post.getPostid());

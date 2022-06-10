@@ -6,7 +6,7 @@
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="name" type="varchar(50)">
-                <constraints nullable="false"/>
+                <constraints nullable="false" unique="true"/>
             </column>
         </createTable>
     </changeSet>
@@ -22,7 +22,7 @@
                 <constraints nullable="false"/>
             </column>
             <column name="username" type="varchar(255)">
-                <constraints nullable="false"/>
+                <constraints nullable="false" unique="true"/>
             </column>
             <column name="password" type="varchar(255)">
                 <constraints nullable="false"/>
@@ -31,7 +31,7 @@
                 <constraints nullable="false"/>
             </column>
             <column name="roleid" type="int">
-                <constraints foreignKeyName="fk_role_user" nullable="false" referencedColumnNames="roleid" referencedTableName="role"/>
+                <constraints foreignKeyName="fk_user_roleid" nullable="false" referencedColumnNames="roleid" referencedTableName="role"/>
             </column>
         </createTable>
     </changeSet>
@@ -41,7 +41,7 @@
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="name" type="varchar(50)">
-                <constraints nullable="false"/>
+                <constraints nullable="false" unique="true"/>
             </column>
             <column name="createdat" type="java.sql.types.timestamp_with_timezone">
                 <constraints nullable="false"/>
@@ -54,7 +54,7 @@
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="name" type="varchar(50)">
-                <constraints nullable="false"/>
+                <constraints nullable="false" unique="true"/>
             </column>
         </createTable>
     </changeSet>
@@ -73,13 +73,13 @@
                 <constraints nullable="false"/>
             </column>
             <column name="userid" type="int">
-                <constraints foreignKeyName="fk_post_user" nullable="false" referencedColumnNames="userid" referencedTableName="user_table"/>
+                <constraints foreignKeyName="fk_post_userid" nullable="false" referencedColumnNames="userid" referencedTableName="user_table"/>
             </column>
             <column name="image" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
             <column name="categoryid" type="int">
-                <constraints foreignKeyName="fk_post_category" nullable="false" referencedColumnNames="categoryid" referencedTableName="category"/>
+                <constraints foreignKeyName="fk_post_categoryid" nullable="false" referencedColumnNames="categoryid" referencedTableName="category"/>
             </column>
             <column name="createdat" type="java.sql.Types.TIMESTAMP_WITH_TIMEZONE">
                 <constraints nullable="false"/>
@@ -92,14 +92,14 @@
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="postid" type="int">
-                <constraints foreignKeyName="fk_comment_post" nullable="false" referencedColumnNames="postid" referencedTableName="post"/>
+                <constraints foreignKeyName="fk_comment_postid" nullable="false" referencedColumnNames="postid" referencedTableName="post"/>
             </column>
             <column name="comment" type="text">
                 <constraints nullable="false"/>
             </column>
             <column name="username" type="varchar(50)">
                 <constraints nullable="false"/>
-<!--                <constraints foreignKeyName="fk_comment_user" nullable="false" referencedColumnNames="username" referencedTableName="user_table"/>-->
+<!--                <constraints foreignKeyName="fk_comment_username" nullable="false" referencedColumnNames="username" referencedTableName="user_table"/>-->
             </column>
             <column name="createdat" type="java.sql.Types.TIMESTAMP_WITH_TIMEZONE">
                 <constraints nullable="false"/>
@@ -112,10 +112,33 @@
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="postid" type="int">
-                <constraints foreignKeyName="fk_postsection_post" nullable="false" referencedColumnNames="postid" referencedTableName="post"/>
+                <constraints foreignKeyName="fk_postsection_postid" nullable="false" referencedColumnNames="postid" referencedTableName="post"/>
             </column>
             <column name="sectionid" type="int">
-                <constraints foreignKeyName="fk_postsection_section" nullable="false" referencedColumnNames="sectionid" referencedTableName="section"/>
+                <constraints foreignKeyName="fk_postsection_sectionid" nullable="false" referencedColumnNames="sectionid" referencedTableName="section"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1652215401359-8" author="Víctor HM">
+        <createTable tableName="permission">
+            <column name="permissionid" autoIncrement="true" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1652215401359-9" author="Víctor HM">
+        <createTable tableName="role_permission">
+            <column name="rolepermissionid" autoIncrement="true" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="roleid" type="int">
+                <constraints foreignKeyName="fk_rolepermission_roleid" nullable="false" referencedColumnNames="roleid" referencedTableName="role" unique="true"/>
+            </column>
+            <column name="permissionid" type="int">
+                <constraints foreignKeyName="fk_rolepermission_permissionid" nullable="false" referencedColumnNames="permissionid" referencedTableName="permission" unique="true"/>
             </column>
         </createTable>
     </changeSet>

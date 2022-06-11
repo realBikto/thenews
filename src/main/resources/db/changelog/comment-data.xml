@@ -5,7 +5,7 @@
     <insert tableName="comment">
       <column name="postid" value="60"/>
       <column name="comment" value="This is my first comment."/>
-      <column name="username" value="email@email.com"/>
+      <column name="username" value="vherrera@thenews.com"/>
       <column name="createdat" value="2022-04-29 10:21:15.510488 +00:00"/>
     </insert>
   </changeSet>
@@ -14,7 +14,7 @@
     <insert tableName="comment">
       <column name="postid" value="60"/>
       <column name="comment" value="We are in a meet."/>
-      <column name="username" value="email@email.com"/>
+      <column name="username" value="vherrera@thenews.com"/>
       <column name="createdat" value="2022-04-29 13:11:05.955495 +00:00"/>
     </insert>
   </changeSet>

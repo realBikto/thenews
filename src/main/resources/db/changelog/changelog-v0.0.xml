@@ -98,8 +98,7 @@
                 <constraints nullable="false"/>
             </column>
             <column name="username" type="varchar(50)">
-                <constraints nullable="false"/>
-<!--                <constraints foreignKeyName="fk_comment_username" nullable="false" referencedColumnNames="username" referencedTableName="user_table"/>-->
+                <constraints foreignKeyName="fk_comment_username" nullable="false" referencedColumnNames="username" referencedTableName="user_table"/>
             </column>
             <column name="createdat" type="java.sql.Types.TIMESTAMP_WITH_TIMEZONE">
                 <constraints nullable="false"/>

@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/realBikto/thenews">
-    <img src="src/main/resources/images/News_of_the_World_(film)_Logo.png" alt="Logo" height="80">
+    <img src="src/main/resources/img/logo.png" alt="Logo" height="80">
   </a>
 <h3 align="center">News of the World - TFG Victor Herrera</h3>
 </div>
@@ -13,22 +13,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<!-- START ABSTRACT HERE -->
+As we all know, we are in the information era, where with just one click we can find thousands of news, some truthful and others not, the well-known fake news. Often, people need a trusted page where they can read information that, in their opinion, is truthful and accurate.
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
-
-<!-- END ABSTRACT HERE -->
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+For this reason, I have decided to implement the News of the World application. This application is a web page, where we can find articles categorized in six major blogs of different natures, implemented to be accessed through any web browser on any computer. To get into this project, we have performed a first search of the background on the news and I have made a study to know how it should be the most suitable structure to solve this need. In addition, it is an open source application, where anyone in the world can consult the code, download it, modify it, make suggestions for improvement and run it just by accessing the Github repository.
 
 
 <!-- GETTING STARTED -->

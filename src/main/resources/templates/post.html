@@ -34,7 +34,7 @@
                                 <li><a th:each="category : ${categories}" th:if="${category.categoryid == post.categoryid}" th:text="${category.name}" th:href="@{/category/} + ${category.name}">Categories</a></li>
                             </ul>
                             <a href="#">
-                                <h3 th:text="${post.content}"></h3>
+                                <h3 th:text="${post.title}"></h3>
                             </a>
                             <ul class="meta pb-20">
                                 <li><span class="lnr lnr-user"></span><a th:each="user : ${users}" th:if="${user.userid == post.userid}" th:text="${user.firstname} + ' ' +${user.lastname}" th:href="@{/user/} + ${user.userid}">username</a></li>
